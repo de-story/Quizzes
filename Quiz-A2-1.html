@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #e8e9ea;
+            color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+        .quiz {
+            text-align: left;
+        }
+        .quiz-start {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .quiz-start button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .quiz-start button:hover {
+            background-color: #2980b9;
+        }
+        .question {
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+        }
+        .question:nth-child(odd) {
+            background-color: #fff7d6; /* Beautiful background color for odd questions */
+        }
+        .answer {
+            margin-bottom: 10px;
+        }
+        .correct {
+            background-color: #b0e57c; /* Green for correct */
+        }
+        .incorrect {
+            background-color: #ff7f7f; /* Red for incorrect */
+        }
+        .timer-bar {
+            background-color: #cde1d1;
+            color: #443a3a;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            margin-bottom: 10px;
+	    font-size: 20px;
+        }
+        .grade {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #3498db;
+            color: #fff;
+        }
+        .readingtext {
+        'margin-left:20px;
+        margin-right:20px; 
+        text-align: justify;
+        font-size:20px;color:#333;
+        background-color: #e0eeff;
+        border-radius: 15px;padding: 15px;
+        text-indent: 15px;
+        line-height: 1.8;"
+        
+        }
+        
+        .readingtitle{
+        margin-left:20px;
+        margin-right:20px;
+         text-align: justify;font-size:20px;
+         color:#fff;
+         background-color: #f07a40;
+         border-radius: 15px;
+         padding: 15px;
+         text-indent: 15px;
+         line-height: 1.8;
+
+        }
+    </style>
+</head>
+<body>
+<div style="visibility:hidden;">
+<!-- Statistics by www.1abzar.com --->
+<script type="text/javascript" src="https://1abzar.ir/abzar/tools/stat/amar-v3-ramz.php?mod=1&amar=2duymdgo5mvn1oibbmwgqa21c-wvg7&p=f9344923c7bbb923e0932ac4e7892d9d"></script><div style="display:none"><h3><a href="https://www.1abzar.com/abzar/stat.php">&#1570;&#1605;&#1575;&#1585;&#1711;&#1740;&#1585; &#1608;&#1576;&#1604;&#1575;&#1711;</a></h3></div>
+<!-- Statistics by www.1abzar.com --->
+</div>
+
+    <div class="container">
+        <div class="header">
+            <h1 style="margin: 20px 0;">1. Quiz A2</h1>
+            <div class="timer-bar">
+                <p>Time Left: <span id="timer">1:00</span></p>
+                <div id="result">Grade: <span id="grade">0</span></p>
+
+            </div>
+        </div>
+        <div class="quiz-start">
+            
+        <button id="startButton" onclick="startQuiz()" disabled>Start</button>
+        <p id="countdown"></p>
+
+        </div>
+        <div class="quiz" id="question-container" style="display: none;">
+        
+            <!-- Questions and answers will be loaded here -->
+            
+        </div>
+        <div class="quiz-start">
+            <button id="finish-button" onclick="finishQuiz()" style="display: none;">Finish</button>
+            <a target="blank" href="https://raw.githubusercontent.com/phdfar/phdfar.github.io/main/an4_diarize_test_0.mp3" id="download-button" style="background-color: rgb(219 52 52); color: #fff; border: none; padding: 10px 20px; font-size: 18px; cursor: pointer; display: none;" >Download Answers</a>
+        </div>
+        <!-- <div id="result"></div> -->
+    </div>
+    <div class="footer">
+        &copy; 2023 Telegram: @de_story 
+    </div>
+    <script>
+    
+    let tag0 = "<p class='readingtitle'>Reading 1 </p><p class='readingtext'>"
+    let tag1 = "</p>"
+    let content = "Anna und Max sind Geschwister. Sie lieben Tiere und möchten gerne einen Tag im Zoo verbringen. Am Samstagmorgen wecken sie ihre Eltern früh auf und sagen: Heute gehen wir in den Zoo! Die Familie packt Sandwiches, Getränke und eine Decke ein. Dann machen sie sich auf den Weg zum Zoo. Dort angekommen, sehen sie viele Tiere: Löwen, Giraffen, Elefanten und Affen. Anna und Max sind aufgeregt und machen Fotos von den Tieren. Um die Mittagszeit setzen sie sich auf ihre Decke und essen ihre Sandwiches. Es schmeckt lecker. Nach dem Essen besuchen sie das Affenhaus und sehen, wie die Affen herumtollen. Anna lacht, als ein Affe lustige Grimassen schneidet. Am Nachmittag besuchen sie das Aquarium und bewundern die bunten Fische. Max findet die Haie besonders beeindruckend. Dann gehen sie zum Ausgang des Zoos und kaufen Souvenirs. Anna wählt einen Stofftiger, und Max entscheidet sich für ein Poster von einem Löwen. Auf dem Heimweg sind Anna und Max sehr müde, aber glücklich. Sie haben einen schönen Tag im Zoo verbracht und freuen sich schon auf das nächste Abenteuer."
+    const readingtext1 = tag0.concat(content, tag1,"\n Wer sind Anna und Max?")
+    
+    tag0 = "<p class='readingtitle'>Reading 2 </p><p class='readingtext'>"
+    tag1 = "</p>"
+    content = "Künstliche Intelligenz, oft als KI abgekürzt, ist ein aufstrebendes Feld der Technologie, das immer mehr in unseren Alltag integriert wird. Es bezieht sich auf Computerprogramme und Maschinen, die menschenähnliche Denk- und Lernprozesse durchführen können. KI findet Anwendung in verschiedenen Bereichen, darunter autonomes Fahren, Spracherkennung, und sogar in der Medizin, wo sie bei der Diagnose und Behandlung von Krankheiten hilft. In unseren Smartphones verwenden wir KI, um Sprachassistenten wie Siri oder Google Assistant zu aktivieren. Obwohl KI viele Vorteile bietet, gibt es auch Bedenken hinsichtlich Datenschutz und Arbeitsplatzverlust. Trotzdem wird sie weiterhin entwickelt, um unser Leben zu erleichtern und innovative Lösungen für komplexe Probleme zu finden. Die Zukunft der Künstlichen Intelligenz sieht vielversprechend aus, und wir können gespannt sein, wie sie unser Leben in den kommenden Jahren weiter verändern wird."
+    const readingtext2 = tag0.concat(content, tag1,"\n Was ist Künstliche Intelligenz (KI) und wie wird sie oft abgekürzt?")
+
+
+
+        const quizData = [
+{
+    question: readingtext1,
+    answers: [
+        { text: "Lehrer und Schüler", correct: false },
+        { text: "Geschwister", correct: true },
+        { text: "Nachbarn", correct: false },
+        { text: "Cousins", correct: false }
+    ]
+},
+{
+    question: "Was packt die Familie ein, bevor sie zum Zoo geht?",
+    answers: [
+        { text: "Spielzeug", correct: false },
+        { text: "Kleidung", correct: false },
+        { text: "Sandwiches, Getränke und eine Decke", correct: true },
+        { text: "Bücher", correct: false }
+    ]
+},
+{
+    question: "Welche Tiere sehen Anna und Max im Zoo?",
+    answers: [
+        { text: "Haie und Pinguine", correct: false },
+        { text: "Hunde und Katzen", correct: false },
+        { text: "Löwen, Giraffen, Elefanten und Affen", correct: true },
+        { text: "Vögel und Schlangen", correct: false }
+    ]
+},
+{
+    question: "Was machen Anna und Max nach dem Essen im Zoo?",
+    answers: [
+        { text: "Sie gehen nach Hause.", correct: false },
+        { text: "Sie besuchen das Affenhaus und sehen Affen.", correct: true },
+        { text: "Sie gehen ins Kino.", correct: false },
+        { text: "Sie spielen Fußball.", correct: false }
+    ]
+},
+{
+    question: "Was kaufen Anna und Max als Souvenirs am Ausgang des Zoos?",
+    answers: [
+        { text: "Postkarten", correct: false },
+        { text: "Süßigkeiten", correct: false },
+        { text: "Kleidung", correct: false },
+        { text: "Anna wählt einen Stofftiger, und Max entscheidet sich für ein Poster von einem Löwen.", correct: true }
+    ]
+},
+{
+question: readingtext2,
+answers: [
+{ text: "KI ist ein aufstrebendes Feld der Technologie, oft abgekürzt als KI.", correct: true },
+{ text: "KI ist ein Begriff aus der Kunstwelt.", correct: false },
+{ text: "KI ist ein spezieller Computermodus.", correct: false },
+{ text: "KI ist ein Filmgenre.", correct: false }
+]
+},
+
+{
+question: "In welchen Bereichen findet Künstliche Intelligenz Anwendung, wie im Text erwähnt?",
+answers: [
+
+{ text: "Sport und Unterhaltung", correct: false },
+{ text: "Landwirtschaft und Astronomie", correct: false },
+{ text: "Mode und Kunst", correct: false },
+{ text: "Autonomes Fahren, Spracherkennung und Medizin", correct: true }
+]
+},
+
+{
+question: "Welche Rolle spielt Künstliche Intelligenz in Smartphones?",
+answers: [
+{ text: "KI wird in Smartphones verwendet, um Sprachassistenten wie Siri oder Google Assistant zu aktivieren.", correct: true },
+{ text: "KI ermöglicht es, Spiele auf Smartphones schneller zu laden.", correct: false },
+{ text: "KI ist in Smartphones nicht relevant.", correct: false },
+{ text: "KI hilft bei der Verbesserung der Akkulaufzeit von Smartphones.", correct: false }
+]
+},
+
+{
+question: "Welche Bedenken werden im Text hinsichtlich Künstlicher Intelligenz erwähnt?",
+answers: [
+{ text: "Die Kosten für KI-Entwicklung", correct: false },
+{ text: "Datenschutz und Arbeitsplatzverlust", correct: true },
+{ text: "Die Begrenzung der KI-Fähigkeiten", correct: false },
+{ text: "Die Verfügbarkeit von KI in ländlichen Gebieten", correct: false }
+]
+},
+
+{
+question: "Wie wird die Zukunft der Künstlichen Intelligenz im Text beschrieben?",
+answers: [
+{ text: "Die Zukunft der Künstlichen Intelligenz sieht vielversprechend aus und wird unser Leben in den kommenden Jahren weiter verändern.", correct: true },
+{ text: "Die Zukunft der Künstlichen Intelligenz wird düster sein und keine Verbesserungen bringen.", correct: false },
+{ text: "Die Zukunft der Künstlichen Intelligenz ist ungewiss und wird keine Auswirkungen haben.", correct: false },
+{ text: "Die Zukunft der Künstlichen Intelligenz wird von politischen Entscheidungen bestimmt.", correct: false }
+]
+}
+        ];
+
+        const questionContainer = document.getElementById('question-container');
+        const totalQuestions = quizData.length;
+        let correctAnswers = 0;
+
+        const timerElement = document.getElementById('timer');
+        let timeLeft = 60; // 60 seconds
+        let timerInterval;
+
+        function updateTimer() {
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                finishQuiz();
+            } else {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                timeLeft--;
+            }
+        }
+
+        function startQuiz() {
+            document.querySelector('.quiz-start button').style.display = 'none';
+            questionContainer.style.display = 'block';
+
+            // Update the timer every second
+            timerInterval = setInterval(updateTimer, 1000);
+
+            quizData.forEach((quizItem, index) => {
+                const question = document.createElement('div');
+                question.className = 'question';
+                question.innerHTML = `<p>Question ${index + 1}: ${quizItem.question}</p>`;
+
+                quizItem.answers.forEach((answerItem, answerIndex) => {
+                    const answer = document.createElement('div');
+                    answer.className = 'answer';
+                    answer.innerHTML = `<input type="radio" name="q${index}" id="q${index}a${answerIndex}" value="${answerItem.text}"> ${answerItem.text}`;
+                    question.appendChild(answer);
+                });
+
+                questionContainer.appendChild(question);
+            });
+
+            document.querySelector('button#finish-button').style.display = 'block';
+            document.querySelector('a#download-button').style.display = 'block';
+        }
+
+        function finishQuiz() {
+            clearInterval(timerInterval); // Stop the timer
+            calculateScore();
+            // Disable radio buttons after clicking "Finish"
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.disabled = true;
+            });
+        }
+
+        function calculateScore() {
+            const answers = document.querySelectorAll('input[type="radio"]:checked');
+
+            answers.forEach(answer => {
+                const questionIndex = answer.name.substring(1); // Extract question index
+                const selectedAnswer = quizData[questionIndex].answers.find(item => item.text === answer.value);
+
+                if (selectedAnswer && selectedAnswer.correct) {
+                    answer.parentElement.classList.add('correct');
+                    correctAnswers++;
+                } else {
+                    answer.parentElement.classList.add('incorrect');
+                    // Show the correct answer for incorrect choices
+                    const correctAnswerElement = document.querySelector(`#q${questionIndex}a${quizData[questionIndex].answers.findIndex(item => item.correct === true)}`);
+                    correctAnswerElement.parentElement.classList.add('correct');
+                }
+                // Disable radio buttons after submitting
+                answer.disabled = true;
+            });
+
+            // Check for unanswered questions and display correct answers
+            const unansweredQuestions = document.querySelectorAll('input[type="radio"]:not(:checked)');
+            unansweredQuestions.forEach(unanswered => {
+                const questionIndex = unanswered.name.substring(1); // Extract question index
+                const correctAnswerElement = document.querySelector(`#q${questionIndex}a${quizData[questionIndex].answers.findIndex(item => item.correct === true)}`);
+                correctAnswerElement.parentElement.classList.add('correct');
+            });
+
+            const resultElement = document.getElementById('result');
+            const grade = `${correctAnswers} of ${totalQuestions}`;
+            resultElement.textContent = `Grade: ${grade}`;
+            resultElement.style.display = 'block';
+        }
+
+        function calculateCountdown() {
+        // const tomorrow = new Date();
+        const targetDate = new Date("2023-10-06T16:44:00");
+	
+        // tomorrow.setHours(0, 0, 0, 0); // Set the time to midnight
+
+        const now = new Date();
+	// alert(now);
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining <= 0) {
+            // If the countdown has reached zero or is negative, enable the "Start" button
+            document.getElementById("startButton").disabled = false;
+            document.getElementById("countdown").textContent = "Time's up!";
+        } else {
+	    document.getElementById("startButton").disabled = true;
+            // If there is time remaining, display the countdown
+            const hours = Math.floor(timeRemaining / 3600000);
+            const minutes = Math.floor((timeRemaining % 3600000) / 60000);
+            const seconds = Math.floor((timeRemaining % 60000) / 1000);
+
+            document.getElementById("countdown").textContent = `Time remaining: ${hours}h ${minutes}m ${seconds}s`;
+            // Update the countdown every second
+            setTimeout(calculateCountdown, 1000);
+        }
+    }
+
+    // Call the calculateCountdown function to start the countdown
+    calculateCountdown();
+
+    </script>
+</body>
+</html>
