@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout with Video</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #2347c5;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 260px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-height: 100vh;
+            overflow-y: auto; /* Makes the sidebar scrollable */
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #3a3f51;
+        }
+
+        .main {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .main h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #3a3f51;
+        }
+
+        footer {
+            background-color: #3a3f51;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        video {
+            width: 100%;
+            max-height: 400px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .subset-links {
+            list-style-type: none;
+            padding-left: 20px; /* Creates spacing between subset links and main link */
+            margin-top: 3px;
+            margin-left: 15px; /* Moves subset links further from the main links */
+			font-size: 0.4em;
+        }
+
+        .subset-links li {
+            margin: 5px 0;
+			font-size: 0.4em;
+        }
+
+        .sidebar ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0; /* Added more spacing between main links */
+        }
+
+        .sidebar ul li a {
+            color: #3a3f51;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .subset-links li a {
+            color: #3a3f51;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .subset-links li a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+
+            .main {
+                order: 1;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>German Listening with European Parliament speeches</h1>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Lessons</h2>
+			
+			
+<ul>
+
+
+  <li><a href="#" id="link1" onclick="showVideo(event, 'Lesson_0001.mp4')">Lesson 1</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList1" class="subset-links hidden">
+
+<li><a href="#">entscheidend</a></li><li><a href="#">wurf</a></li><li><a href="#">lassen</a></li><li><a href="#">ungarn</a></li><li><a href="#">bewusst</a></li><li><a href="#">weiterentwicklung</a></li><li><a href="#">zunahme</a></li><li><a href="#">inhalt</a></li><li><a href="#">schritte</a></li><li><a href="#">position</a></li><li><a href="#">hart</a></li><li><a href="#">vorgeschlagen</a></li><li><a href="#">reagieren</a></li><li><a href="#">übersetzt</a></li><li><a href="#">finden</a></li><li><a href="#">hass</a></li><li><a href="#">jahrhundert</a></li><li><a href="#">überzeugt</a></li><li><a href="#">anscheinend</a></li><li><a href="#">verwenden</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link2" onclick="showVideo(event, 'Lesson_0002.mp4')">Lesson 2</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList2" class="subset-links hidden">
+
+<li><a href="#">angebote</a></li><li><a href="#">gipfel</a></li><li><a href="#">ideologie</a></li><li><a href="#">wunsch</a></li><li><a href="#">weit</a></li><li><a href="#">gestaltet</a></li><li><a href="#">versammlung</a></li><li><a href="#">sieht</a></li><li><a href="#">ecke</a></li><li><a href="#">erzählen</a></li><li><a href="#">verbieten</a></li><li><a href="#">sechzig</a></li><li><a href="#">straße</a></li><li><a href="#">integration</a></li><li><a href="#">kürzen</a></li><li><a href="#">sicherheit</a></li><li><a href="#">grenzen</a></li><li><a href="#">ihr</a></li><li><a href="#">mögliche</a></li><li><a href="#">wesentlichen</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link3" onclick="showVideo(event, 'Lesson_0003.mp4')">Lesson 3</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList3" class="subset-links hidden">
+
+<li><a href="#">menschenrechte</a></li><li><a href="#">tür</a></li><li><a href="#">maßstäbe</a></li><li><a href="#">kommen</a></li><li><a href="#">sprachen</a></li><li><a href="#">nochmals</a></li><li><a href="#">ton</a></li><li><a href="#">fortsetzen</a></li><li><a href="#">betriebe</a></li><li><a href="#">sicht</a></li><li><a href="#">platz</a></li><li><a href="#">sitzungen</a></li><li><a href="#">staaten</a></li><li><a href="#">minute</a></li><li><a href="#">mittlerweile</a></li><li><a href="#">wiederholen</a></li><li><a href="#">zulässig</a></li><li><a href="#">solange</a></li><li><a href="#">nett</a></li><li><a href="#">schule</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link4" onclick="showVideo(event, 'Lesson_0004.mp4')">Lesson 4</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList4" class="subset-links hidden">
+
+<li><a href="#">polen</a></li><li><a href="#">gewährleisten</a></li><li><a href="#">beschrieben</a></li><li><a href="#">gesteckt</a></li><li><a href="#">wahlen</a></li><li><a href="#">glaubt</a></li><li><a href="#">verunsichert</a></li><li><a href="#">demokratisch</a></li><li><a href="#">sowie</a></li><li><a href="#">gefährliche</a></li><li><a href="#">veröffentlichung</a></li><li><a href="#">seit</a></li><li><a href="#">verbreitet</a></li><li><a href="#">lebensraum</a></li><li><a href="#">erinnert</a></li><li><a href="#">planeten</a></li><li><a href="#">essen</a></li><li><a href="#">herstellung</a></li><li><a href="#">ausführungen</a></li><li><a href="#">instrumente</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link5" onclick="showVideo(event, 'Lesson_0005.mp4')">Lesson 5</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList5" class="subset-links hidden">
+
+<li><a href="#">politischer</a></li><li><a href="#">wachsende</a></li><li><a href="#">produkten</a></li><li><a href="#">überzeugen</a></li><li><a href="#">minderheiten</a></li><li><a href="#">bedenken</a></li><li><a href="#">einiges</a></li><li><a href="#">patient</a></li><li><a href="#">konstruktion</a></li><li><a href="#">an</a></li><li><a href="#">viele</a></li><li><a href="#">gas</a></li><li><a href="#">alten</a></li><li><a href="#">flüchtlings</a></li><li><a href="#">nähe</a></li><li><a href="#">angepasst</a></li><li><a href="#">drin</a></li><li><a href="#">blauen</a></li><li><a href="#">modell</a></li><li><a href="#">fürchten</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link6" onclick="showVideo(event, 'Lesson_0006.mp4')">Lesson 6</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList6" class="subset-links hidden">
+
+<li><a href="#">korrekte</a></li><li><a href="#">detaillierte</a></li><li><a href="#">urkunden</a></li><li><a href="#">förderung</a></li><li><a href="#">vorstellungen</a></li><li><a href="#">echte</a></li><li><a href="#">ausschließen</a></li><li><a href="#">könig</a></li><li><a href="#">vierzehn</a></li><li><a href="#">freue</a></li><li><a href="#">gescheitert</a></li><li><a href="#">arbeitsplätze</a></li><li><a href="#">es</a></li><li><a href="#">mehrzahl</a></li><li><a href="#">respektiert</a></li><li><a href="#">historisch</a></li><li><a href="#">schweiz</a></li><li><a href="#">unabhängig</a></li><li><a href="#">eben</a></li><li><a href="#">optionen</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link7" onclick="showVideo(event, 'Lesson_0007.mp4')">Lesson 7</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList7" class="subset-links hidden">
+
+<li><a href="#">verstärkt</a></li><li><a href="#">kommissars</a></li><li><a href="#">unmittelbar</a></li><li><a href="#">festgestellt</a></li><li><a href="#">höhere</a></li><li><a href="#">vielen</a></li><li><a href="#">sensibel</a></li><li><a href="#">ein</a></li><li><a href="#">zwanzig</a></li><li><a href="#">keinerlei</a></li><li><a href="#">produkte</a></li><li><a href="#">aufhalten</a></li><li><a href="#">mängel</a></li><li><a href="#">europäischen</a></li><li><a href="#">gestartet</a></li><li><a href="#">pro</a></li><li><a href="#">text</a></li><li><a href="#">führer</a></li><li><a href="#">rechtlichen</a></li><li><a href="#">kenne</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link8" onclick="showVideo(event, 'Lesson_0008.mp4')">Lesson 8</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList8" class="subset-links hidden">
+
+<li><a href="#">konnte</a></li><li><a href="#">landen</a></li><li><a href="#">eigentlichen</a></li><li><a href="#">aufgegeben</a></li><li><a href="#">nehmen</a></li><li><a href="#">erwartungen</a></li><li><a href="#">keine</a></li><li><a href="#">einführen</a></li><li><a href="#">dieser</a></li><li><a href="#">entwickelt</a></li><li><a href="#">gute</a></li><li><a href="#">nachfrage</a></li><li><a href="#">bereits</a></li><li><a href="#">verschiedenen</a></li><li><a href="#">dorthin</a></li><li><a href="#">übernehmen</a></li><li><a href="#">überraschend</a></li><li><a href="#">halte</a></li><li><a href="#">arme</a></li><li><a href="#">vermisse</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link9" onclick="showVideo(event, 'Lesson_0009.mp4')">Lesson 9</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList9" class="subset-links hidden">
+
+<li><a href="#">staatsbürgerschaft</a></li><li><a href="#">firmen</a></li><li><a href="#">hingewiesen</a></li><li><a href="#">dingen</a></li><li><a href="#">betreiben</a></li><li><a href="#">dadurch</a></li><li><a href="#">unabhängige</a></li><li><a href="#">außer</a></li><li><a href="#">genauso</a></li><li><a href="#">vertretung</a></li><li><a href="#">trinkwasser</a></li><li><a href="#">ausstellung</a></li><li><a href="#">konflikt</a></li><li><a href="#">enttäuschung</a></li><li><a href="#">gesetzlichen</a></li><li><a href="#">jahre</a></li><li><a href="#">knie</a></li><li><a href="#">drittel</a></li><li><a href="#">national</a></li><li><a href="#">verbrechen</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link10" onclick="showVideo(event, 'Lesson_0010.mp4')">Lesson 10</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList10" class="subset-links hidden">
+
+<li><a href="#">junge</a></li><li><a href="#">eventuell</a></li><li><a href="#">niemand</a></li><li><a href="#">teilweise</a></li><li><a href="#">lokomotive</a></li><li><a href="#">beispiele</a></li><li><a href="#">fliegen</a></li><li><a href="#">eindeutig</a></li><li><a href="#">stößt</a></li><li><a href="#">minuten</a></li><li><a href="#">litauen</a></li><li><a href="#">kanada</a></li><li><a href="#">funktioniert</a></li><li><a href="#">königreich</a></li><li><a href="#">begrüßt</a></li><li><a href="#">fortgesetzt</a></li><li><a href="#">retten</a></li><li><a href="#">gesorgt</a></li><li><a href="#">einladung</a></li><li><a href="#">schwieriger</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link11" onclick="showVideo(event, 'Lesson_0011.mp4')">Lesson 11</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList11" class="subset-links hidden">
+
+<li><a href="#">aufpassen</a></li><li><a href="#">eingehalten</a></li><li><a href="#">vierten</a></li><li><a href="#">niveau</a></li><li><a href="#">ganzen</a></li><li><a href="#">vier</a></li><li><a href="#">einverstanden</a></li><li><a href="#">betonen</a></li><li><a href="#">erteilen</a></li><li><a href="#">angriff</a></li><li><a href="#">hohes</a></li><li><a href="#">kritische</a></li><li><a href="#">tradition</a></li><li><a href="#">ähnlichen</a></li><li><a href="#">komplexes</a></li><li><a href="#">licht</a></li><li><a href="#">findet</a></li><li><a href="#">debatte</a></li><li><a href="#">diskutieren</a></li><li><a href="#">organisierte</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link12" onclick="showVideo(event, 'Lesson_0012.mp4')">Lesson 12</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList12" class="subset-links hidden">
+
+<li><a href="#">standpunkt</a></li><li><a href="#">sonst</a></li><li><a href="#">ausbildung</a></li><li><a href="#">starken</a></li><li><a href="#">alltag</a></li><li><a href="#">realitäten</a></li><li><a href="#">gerne</a></li><li><a href="#">wäre</a></li><li><a href="#">zügig</a></li><li><a href="#">vorhanden</a></li><li><a href="#">kriterium</a></li><li><a href="#">ökologischen</a></li><li><a href="#">deutsches</a></li><li><a href="#">achtzig</a></li><li><a href="#">erbringen</a></li><li><a href="#">sollen</a></li><li><a href="#">flugzeug</a></li><li><a href="#">fühlen</a></li><li><a href="#">einladen</a></li><li><a href="#">vereinfacht</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link13" onclick="showVideo(event, 'Lesson_0013.mp4')">Lesson 13</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList13" class="subset-links hidden">
+
+<li><a href="#">rückkehr</a></li><li><a href="#">schätze</a></li><li><a href="#">erfasst</a></li><li><a href="#">kommissarin</a></li><li><a href="#">verbesserung</a></li><li><a href="#">norden</a></li><li><a href="#">verknüpfung</a></li><li><a href="#">zurzeit</a></li><li><a href="#">fällen</a></li><li><a href="#">vorschlägen</a></li><li><a href="#">aufbauen</a></li><li><a href="#">finanziellen</a></li><li><a href="#">konflikte</a></li><li><a href="#">sagen</a></li><li><a href="#">entscheidung</a></li><li><a href="#">ausüben</a></li><li><a href="#">welt</a></li><li><a href="#">skandal</a></li><li><a href="#">umgesetzt</a></li><li><a href="#">verträge</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link14" onclick="showVideo(event, 'Lesson_0014.mp4')">Lesson 14</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList14" class="subset-links hidden">
+
+<li><a href="#">augen</a></li><li><a href="#">sinn</a></li><li><a href="#">fünfzig</a></li><li><a href="#">rechten</a></li><li><a href="#">abend</a></li><li><a href="#">falschen</a></li><li><a href="#">asyl</a></li><li><a href="#">geht</a></li><li><a href="#">intensiver</a></li><li><a href="#">sichern</a></li><li><a href="#">april</a></li><li><a href="#">kurs</a></li><li><a href="#">dürfen</a></li><li><a href="#">weltweit</a></li><li><a href="#">herrn</a></li><li><a href="#">absurd</a></li><li><a href="#">solidarität</a></li><li><a href="#">weitere</a></li><li><a href="#">bleibt</a></li><li><a href="#">vorteil</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link15" onclick="showVideo(event, 'Lesson_0015.mp4')">Lesson 15</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList15" class="subset-links hidden">
+
+<li><a href="#">benennen</a></li><li><a href="#">land</a></li><li><a href="#">abgegeben</a></li><li><a href="#">monat</a></li><li><a href="#">öffentliche</a></li><li><a href="#">daten</a></li><li><a href="#">wahrheit</a></li><li><a href="#">auftrag</a></li><li><a href="#">davor</a></li><li><a href="#">chinesen</a></li><li><a href="#">artikel</a></li><li><a href="#">kultur</a></li><li><a href="#">aussetzen</a></li><li><a href="#">hingegen</a></li><li><a href="#">nennen</a></li><li><a href="#">wesentlicher</a></li><li><a href="#">erfolg</a></li><li><a href="#">flüchtlinge</a></li><li><a href="#">tatsächlich</a></li><li><a href="#">klarer</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link16" onclick="showVideo(event, 'Lesson_0016.mp4')">Lesson 16</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList16" class="subset-links hidden">
+
+<li><a href="#">verständigung</a></li><li><a href="#">liegt</a></li><li><a href="#">heraus</a></li><li><a href="#">parteien</a></li><li><a href="#">ernsthaft</a></li><li><a href="#">beschwerden</a></li><li><a href="#">hoffen</a></li><li><a href="#">stichwort</a></li><li><a href="#">gefällt</a></li><li><a href="#">zugang</a></li><li><a href="#">hintergrund</a></li><li><a href="#">schriftlich</a></li><li><a href="#">drohen</a></li><li><a href="#">dauert</a></li><li><a href="#">bewegung</a></li><li><a href="#">offenen</a></li><li><a href="#">kinder</a></li><li><a href="#">ordentlich</a></li><li><a href="#">wohnung</a></li><li><a href="#">anbieter</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link17" onclick="showVideo(event, 'Lesson_0017.mp4')">Lesson 17</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList17" class="subset-links hidden">
+
+<li><a href="#">element</a></li><li><a href="#">deswegen</a></li><li><a href="#">früheren</a></li><li><a href="#">handeln</a></li><li><a href="#">gespräch</a></li><li><a href="#">kroatien</a></li><li><a href="#">unternehmen</a></li><li><a href="#">meinem</a></li><li><a href="#">nächste</a></li><li><a href="#">gleichgültig</a></li><li><a href="#">wenig</a></li><li><a href="#">volle</a></li><li><a href="#">rücken</a></li><li><a href="#">piloten</a></li><li><a href="#">ohne</a></li><li><a href="#">geringer</a></li><li><a href="#">äußerst</a></li><li><a href="#">vielzahl</a></li><li><a href="#">anderen</a></li><li><a href="#">strategie</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link18" onclick="showVideo(event, 'Lesson_0018.mp4')">Lesson 18</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList18" class="subset-links hidden">
+
+<li><a href="#">bemerkung</a></li><li><a href="#">geführt</a></li><li><a href="#">prinzip</a></li><li><a href="#">gemerkt</a></li><li><a href="#">europäer</a></li><li><a href="#">gestärkt</a></li><li><a href="#">auffordern</a></li><li><a href="#">kommt</a></li><li><a href="#">erfolgt</a></li><li><a href="#">abgeordneten</a></li><li><a href="#">identität</a></li><li><a href="#">vorne</a></li><li><a href="#">siebzig</a></li><li><a href="#">wohlergehen</a></li><li><a href="#">beginnen</a></li><li><a href="#">importiert</a></li><li><a href="#">wissenschaftlichen</a></li><li><a href="#">regierung</a></li><li><a href="#">struktur</a></li><li><a href="#">besetzt</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link19" onclick="showVideo(event, 'Lesson_0019.mp4')">Lesson 19</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList19" class="subset-links hidden">
+
+<li><a href="#">können</a></li><li><a href="#">solche</a></li><li><a href="#">flut</a></li><li><a href="#">leiden</a></li><li><a href="#">nachhaltiger</a></li><li><a href="#">aktivitäten</a></li><li><a href="#">gegründet</a></li><li><a href="#">frei</a></li><li><a href="#">deutschland</a></li><li><a href="#">konservativ</a></li><li><a href="#">umgehen</a></li><li><a href="#">arbeiten</a></li><li><a href="#">produziert</a></li><li><a href="#">ehrlich</a></li><li><a href="#">zusagen</a></li><li><a href="#">zusammenarbeiten</a></li><li><a href="#">meer</a></li><li><a href="#">verlangen</a></li><li><a href="#">vergessen</a></li><li><a href="#">koalition</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link20" onclick="showVideo(event, 'Lesson_0020.mp4')">Lesson 20</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList20" class="subset-links hidden">
+
+<li><a href="#">blockieren</a></li><li><a href="#">erfolgreich</a></li><li><a href="#">behandlung</a></li><li><a href="#">gezeigt</a></li><li><a href="#">donnerstag</a></li><li><a href="#">gerichtet</a></li><li><a href="#">verteilung</a></li><li><a href="#">verhandelt</a></li><li><a href="#">mandate</a></li><li><a href="#">reichtum</a></li><li><a href="#">konzept</a></li><li><a href="#">aufnehmen</a></li><li><a href="#">insgesamt</a></li><li><a href="#">mittels</a></li><li><a href="#">letztes</a></li><li><a href="#">statistik</a></li><li><a href="#">zweiundzwanzig</a></li><li><a href="#">zukünftigen</a></li><li><a href="#">schnell</a></li><li><a href="#">identifiziert</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link21" onclick="showVideo(event, 'Lesson_0021.mp4')">Lesson 21</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList21" class="subset-links hidden">
+
+<li><a href="#">überprüfung</a></li><li><a href="#">erfolge</a></li><li><a href="#">glück</a></li><li><a href="#">verbesserte</a></li><li><a href="#">seinem</a></li><li><a href="#">besonderen</a></li><li><a href="#">verwirklichung</a></li><li><a href="#">zustand</a></li><li><a href="#">zwei</a></li><li><a href="#">einführung</a></li><li><a href="#">bereitschaft</a></li><li><a href="#">vereinigte</a></li><li><a href="#">wochenende</a></li><li><a href="#">ganz</a></li><li><a href="#">verfahren</a></li><li><a href="#">prioritäten</a></li><li><a href="#">privaten</a></li><li><a href="#">ging</a></li><li><a href="#">genügend</a></li><li><a href="#">stärkt</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link22" onclick="showVideo(event, 'Lesson_0022.mp4')">Lesson 22</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList22" class="subset-links hidden">
+
+<li><a href="#">dessen</a></li><li><a href="#">kirchen</a></li><li><a href="#">durchgesetzt</a></li><li><a href="#">pflegen</a></li><li><a href="#">bietet</a></li><li><a href="#">schweren</a></li><li><a href="#">wirkung</a></li><li><a href="#">passiert</a></li><li><a href="#">reduzieren</a></li><li><a href="#">zweite</a></li><li><a href="#">wünschen</a></li><li><a href="#">berücksichtigen</a></li><li><a href="#">kindern</a></li><li><a href="#">beschäftigt</a></li><li><a href="#">verkehr</a></li><li><a href="#">ergebnis</a></li><li><a href="#">wirtschaftlichen</a></li><li><a href="#">streit</a></li><li><a href="#">sieg</a></li><li><a href="#">millionen</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link23" onclick="showVideo(event, 'Lesson_0023.mp4')">Lesson 23</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList23" class="subset-links hidden">
+
+<li><a href="#">deutschen</a></li><li><a href="#">beschäftigen</a></li><li><a href="#">kämpfen</a></li><li><a href="#">integrierte</a></li><li><a href="#">ansprüche</a></li><li><a href="#">global</a></li><li><a href="#">haus</a></li><li><a href="#">auftreten</a></li><li><a href="#">einer</a></li><li><a href="#">entwickeln</a></li><li><a href="#">größer</a></li><li><a href="#">entschuldigung</a></li><li><a href="#">umweltschutz</a></li><li><a href="#">jährlichen</a></li><li><a href="#">ihrem</a></li><li><a href="#">vollkommen</a></li><li><a href="#">gewollt</a></li><li><a href="#">alles</a></li><li><a href="#">getrieben</a></li><li><a href="#">bereichen</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link24" onclick="showVideo(event, 'Lesson_0024.mp4')">Lesson 24</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList24" class="subset-links hidden">
+
+<li><a href="#">seine</a></li><li><a href="#">unbedingt</a></li><li><a href="#">banken</a></li><li><a href="#">letzte</a></li><li><a href="#">richter</a></li><li><a href="#">klimaschutz</a></li><li><a href="#">gesellschaftliche</a></li><li><a href="#">dank</a></li><li><a href="#">weg</a></li><li><a href="#">märz</a></li><li><a href="#">wirken</a></li><li><a href="#">für</a></li><li><a href="#">weiß</a></li><li><a href="#">organisieren</a></li><li><a href="#">überprüft</a></li><li><a href="#">digitale</a></li><li><a href="#">informiert</a></li><li><a href="#">technologie</a></li><li><a href="#">gefährlich</a></li><li><a href="#">australien</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link25" onclick="showVideo(event, 'Lesson_0025.mp4')">Lesson 25</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList25" class="subset-links hidden">
+
+<li><a href="#">relevante</a></li><li><a href="#">jeden</a></li><li><a href="#">illegal</a></li><li><a href="#">entgegen</a></li><li><a href="#">aussprechen</a></li><li><a href="#">hinter</a></li><li><a href="#">behandelt</a></li><li><a href="#">recht</a></li><li><a href="#">produktion</a></li><li><a href="#">beides</a></li><li><a href="#">darunter</a></li><li><a href="#">unter</a></li><li><a href="#">eingeführt</a></li><li><a href="#">kleinen</a></li><li><a href="#">bitte</a></li><li><a href="#">frankreich</a></li><li><a href="#">sein</a></li><li><a href="#">jahres</a></li><li><a href="#">veränderte</a></li><li><a href="#">einige</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link26" onclick="showVideo(event, 'Lesson_0026.mp4')">Lesson 26</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList26" class="subset-links hidden">
+
+<li><a href="#">osten</a></li><li><a href="#">linie</a></li><li><a href="#">präsidenten</a></li><li><a href="#">beantragen</a></li><li><a href="#">ausgestellt</a></li><li><a href="#">wirksamkeit</a></li><li><a href="#">verlaufen</a></li><li><a href="#">jenseits</a></li><li><a href="#">immer</a></li><li><a href="#">programm</a></li><li><a href="#">mitgewirkt</a></li><li><a href="#">anteil</a></li><li><a href="#">hören</a></li><li><a href="#">afrika</a></li><li><a href="#">parlaments</a></li><li><a href="#">macht</a></li><li><a href="#">scheinbar</a></li><li><a href="#">staatsanwalt</a></li><li><a href="#">britische</a></li><li><a href="#">fähigkeit</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link27" onclick="showVideo(event, 'Lesson_0027.mp4')">Lesson 27</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList27" class="subset-links hidden">
+
+<li><a href="#">prinzipien</a></li><li><a href="#">folgen</a></li><li><a href="#">dass</a></li><li><a href="#">worden</a></li><li><a href="#">verletzung</a></li><li><a href="#">job</a></li><li><a href="#">untersuchungen</a></li><li><a href="#">anmerken</a></li><li><a href="#">vor</a></li><li><a href="#">informationen</a></li><li><a href="#">technologien</a></li><li><a href="#">investitionen</a></li><li><a href="#">gegensatz</a></li><li><a href="#">setze</a></li><li><a href="#">staatliche</a></li><li><a href="#">beraten</a></li><li><a href="#">wirtschaftlich</a></li><li><a href="#">übrigens</a></li><li><a href="#">bitten</a></li><li><a href="#">belastung</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link28" onclick="showVideo(event, 'Lesson_0028.mp4')">Lesson 28</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList28" class="subset-links hidden">
+
+<li><a href="#">intensive</a></li><li><a href="#">effizient</a></li><li><a href="#">überlassen</a></li><li><a href="#">privatsphäre</a></li><li><a href="#">am</a></li><li><a href="#">kulturellen</a></li><li><a href="#">aufrechterhalten</a></li><li><a href="#">liegen</a></li><li><a href="#">bestehen</a></li><li><a href="#">akzeptieren</a></li><li><a href="#">jemanden</a></li><li><a href="#">austausch</a></li><li><a href="#">finanzen</a></li><li><a href="#">tagen</a></li><li><a href="#">geschickt</a></li><li><a href="#">erweisen</a></li><li><a href="#">zeiten</a></li><li><a href="#">landwirtschaft</a></li><li><a href="#">verstärken</a></li><li><a href="#">festgehalten</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link29" onclick="showVideo(event, 'Lesson_0029.mp4')">Lesson 29</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList29" class="subset-links hidden">
+
+<li><a href="#">belastungen</a></li><li><a href="#">arbeit</a></li><li><a href="#">bekannt</a></li><li><a href="#">brief</a></li><li><a href="#">kriegen</a></li><li><a href="#">fand</a></li><li><a href="#">ebenso</a></li><li><a href="#">hinterlassen</a></li><li><a href="#">stunde</a></li><li><a href="#">staat</a></li><li><a href="#">umweltpolitik</a></li><li><a href="#">gekauft</a></li><li><a href="#">ziehen</a></li><li><a href="#">effektiv</a></li><li><a href="#">zwingen</a></li><li><a href="#">darüber</a></li><li><a href="#">vorher</a></li><li><a href="#">aufhören</a></li><li><a href="#">datenschutz</a></li><li><a href="#">lösen</a></li>
+
+      </ul>
+  </li>
+
+
+
+  <li><a href="#" id="link30" onclick="showVideo(event, 'Lesson_0030.mp4')">Lesson 30</a>
+      <!-- Subset links (hidden by default) -->
+      <ul id="subsetList30" class="subset-links hidden">
+
+<li><a href="#">schadet</a></li><li><a href="#">angeboten</a></li><li><a href="#">ausland</a></li><li><a href="#">perspektive</a></li><li><a href="#">hände</a></li><li><a href="#">zum</a></li><li><a href="#">entnehmen</a></li><li><a href="#">gegenseitig</a></li><li><a href="#">private</a></li><li><a href="#">berücksichtigt</a></li><li><a href="#">vorschlagen</a></li><li><a href="#">betreiber</a></li><li><a href="#">themen</a></li><li><a href="#">verfügung</a></li><li><a href="#">meinung</a></li><li><a href="#">gerecht</a></li><li><a href="#">zuständig</a></li><li><a href="#">mitglied</a></li><li><a href="#">auswirken</a></li><li><a href="#">fast</a></li>
+
+      </ul>
+  </li>
+
+</ul>
+
+
+        </aside>
+
+        <section class="main">
+            <h2>Contact us to buy 235 complete lessons. Telegram : @de_story </h2>
+            <!-- <p>Click on a link to display the video and related subset links.</p> -->
+
+            <!-- Video container (hidden by default) -->
+            <video id="videoPlayer" class="hidden" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </div>
+
+    <footer>
+        <p>Telegram : @de_story</p>
+    </footer>
+
+    <script>
+        function showVideo(event, videoSrc) {
+            // Hide all subset lists first
+            const allSubsetLists = document.querySelectorAll('.subset-links');
+            allSubsetLists.forEach(list => list.classList.add('hidden'));
+
+            // Get the specific subset list under the clicked link
+            const link = event.target;
+            const subsetList = link.nextElementSibling;
+            subsetList.classList.remove('hidden'); // Show the correct subset list
+
+            // Show the video and update the video source
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.classList.remove('hidden');
+            videoPlayer.querySelector('source').src = videoSrc;
+            videoPlayer.load(); // Reload video with the new source
+        }
+    </script>
+
+</body>
+
+</html>
