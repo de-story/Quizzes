@@ -18,7 +18,7 @@
         }
 
         header {
-            background-color: #2347c5;
+            background-color: #3a3f51;
             color: white;
             text-align: center;
             padding: 15px 0;
@@ -45,7 +45,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             max-height: 100vh;
-            overflow-y: auto; /* Makes the sidebar scrollable */
+            overflow-y: auto;
         }
 
         .sidebar h2 {
@@ -66,6 +66,13 @@
             font-size: 20px;
             margin-bottom: 10px;
             color: #3a3f51;
+        }
+
+        .video-title {
+            font-size: 18px;
+            color: #3a3f51;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
         footer {
@@ -94,15 +101,13 @@
 
         .subset-links {
             list-style-type: none;
-            padding-left: 20px; /* Creates spacing between subset links and main link */
-            margin-top: 3px;
-            margin-left: 15px; /* Moves subset links further from the main links */
-			font-size: 0.4em;
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-left: 15px;
         }
 
         .subset-links li {
             margin: 5px 0;
-			font-size: 0.4em;
         }
 
         .sidebar ul {
@@ -111,7 +116,7 @@
         }
 
         .sidebar ul li {
-            margin: 15px 0; /* Added more spacing between main links */
+            margin: 1px 0;
         }
 
         .sidebar ul li a {
@@ -122,6 +127,11 @@
             display: block;
             border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar ul li a.active {
+            background-color: #4CAF50;
+            color: white;
         }
 
         .sidebar ul li a:hover {
@@ -161,22 +171,20 @@
 <body>
 
     <header>
-        <h1>German Listening with European Parliament speeches</h1>
+        <h1>Responsive Layout with Video</h1>
     </header>
 
     <div class="container">
         <aside class="sidebar">
-            <h2>Lessons</h2>
-			
-			
-<ul>
+            <h2>Sidebar</h2>
+ <ul>
 
 
   <li><a href="#" id="link1" onclick="showVideo(event, 'Lesson_0001.mp4')">Lesson 1</a>
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList1" class="subset-links hidden">
 
-<li><a href="#">entscheidend</a></li><li><a href="#">wurf</a></li><li><a href="#">lassen</a></li><li><a href="#">ungarn</a></li><li><a href="#">bewusst</a></li><li><a href="#">weiterentwicklung</a></li><li><a href="#">zunahme</a></li><li><a href="#">inhalt</a></li><li><a href="#">schritte</a></li><li><a href="#">position</a></li><li><a href="#">hart</a></li><li><a href="#">vorgeschlagen</a></li><li><a href="#">reagieren</a></li><li><a href="#">übersetzt</a></li><li><a href="#">finden</a></li><li><a href="#">hass</a></li><li><a href="#">jahrhundert</a></li><li><a href="#">überzeugt</a></li><li><a href="#">anscheinend</a></li><li><a href="#">verwenden</a></li>
+<li><b><a href="#">entscheidend</a></b></li><li><b><a href="#">wurf</a></b></li><li><b><a href="#">lassen</a></b></li><li><b><a href="#">ungarn</a></b></li><li><b><a href="#">bewusst</a></b></li><li><b><a href="#">weiterentwicklung</a></b></li><li><b><a href="#">zunahme</a></b></li><li><b><a href="#">inhalt</a></b></li><li><b><a href="#">schritte</a></b></li><li><b><a href="#">position</a></b></li><li><b><a href="#">hart</a></b></li><li><b><a href="#">vorgeschlagen</a></b></li><li><b><a href="#">reagieren</a></b></li><li><b><a href="#">übersetzt</a></b></li><li><b><a href="#">finden</a></b></li><li><b><a href="#">hass</a></b></li><li><b><a href="#">jahrhundert</a></b></li><li><b><a href="#">überzeugt</a></b></li><li><b><a href="#">anscheinend</a></b></li><li><b><a href="#">verwenden</a></b></li>
 
       </ul>
   </li>
@@ -187,7 +195,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList2" class="subset-links hidden">
 
-<li><a href="#">angebote</a></li><li><a href="#">gipfel</a></li><li><a href="#">ideologie</a></li><li><a href="#">wunsch</a></li><li><a href="#">weit</a></li><li><a href="#">gestaltet</a></li><li><a href="#">versammlung</a></li><li><a href="#">sieht</a></li><li><a href="#">ecke</a></li><li><a href="#">erzählen</a></li><li><a href="#">verbieten</a></li><li><a href="#">sechzig</a></li><li><a href="#">straße</a></li><li><a href="#">integration</a></li><li><a href="#">kürzen</a></li><li><a href="#">sicherheit</a></li><li><a href="#">grenzen</a></li><li><a href="#">ihr</a></li><li><a href="#">mögliche</a></li><li><a href="#">wesentlichen</a></li>
+<li><b><a href="#">angebote</a></b></li><li><b><a href="#">gipfel</a></b></li><li><b><a href="#">ideologie</a></b></li><li><b><a href="#">wunsch</a></b></li><li><b><a href="#">weit</a></b></li><li><b><a href="#">gestaltet</a></b></li><li><b><a href="#">versammlung</a></b></li><li><b><a href="#">sieht</a></b></li><li><b><a href="#">ecke</a></b></li><li><b><a href="#">erzählen</a></b></li><li><b><a href="#">verbieten</a></b></li><li><b><a href="#">sechzig</a></b></li><li><b><a href="#">straße</a></b></li><li><b><a href="#">integration</a></b></li><li><b><a href="#">kürzen</a></b></li><li><b><a href="#">sicherheit</a></b></li><li><b><a href="#">grenzen</a></b></li><li><b><a href="#">ihr</a></b></li><li><b><a href="#">mögliche</a></b></li><li><b><a href="#">wesentlichen</a></b></li>
 
       </ul>
   </li>
@@ -198,7 +206,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList3" class="subset-links hidden">
 
-<li><a href="#">menschenrechte</a></li><li><a href="#">tür</a></li><li><a href="#">maßstäbe</a></li><li><a href="#">kommen</a></li><li><a href="#">sprachen</a></li><li><a href="#">nochmals</a></li><li><a href="#">ton</a></li><li><a href="#">fortsetzen</a></li><li><a href="#">betriebe</a></li><li><a href="#">sicht</a></li><li><a href="#">platz</a></li><li><a href="#">sitzungen</a></li><li><a href="#">staaten</a></li><li><a href="#">minute</a></li><li><a href="#">mittlerweile</a></li><li><a href="#">wiederholen</a></li><li><a href="#">zulässig</a></li><li><a href="#">solange</a></li><li><a href="#">nett</a></li><li><a href="#">schule</a></li>
+<li><b><a href="#">menschenrechte</a></b></li><li><b><a href="#">tür</a></b></li><li><b><a href="#">maßstäbe</a></b></li><li><b><a href="#">kommen</a></b></li><li><b><a href="#">sprachen</a></b></li><li><b><a href="#">nochmals</a></b></li><li><b><a href="#">ton</a></b></li><li><b><a href="#">fortsetzen</a></b></li><li><b><a href="#">betriebe</a></b></li><li><b><a href="#">sicht</a></b></li><li><b><a href="#">platz</a></b></li><li><b><a href="#">sitzungen</a></b></li><li><b><a href="#">staaten</a></b></li><li><b><a href="#">minute</a></b></li><li><b><a href="#">mittlerweile</a></b></li><li><b><a href="#">wiederholen</a></b></li><li><b><a href="#">zulässig</a></b></li><li><b><a href="#">solange</a></b></li><li><b><a href="#">nett</a></b></li><li><b><a href="#">schule</a></b></li>
 
       </ul>
   </li>
@@ -209,7 +217,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList4" class="subset-links hidden">
 
-<li><a href="#">polen</a></li><li><a href="#">gewährleisten</a></li><li><a href="#">beschrieben</a></li><li><a href="#">gesteckt</a></li><li><a href="#">wahlen</a></li><li><a href="#">glaubt</a></li><li><a href="#">verunsichert</a></li><li><a href="#">demokratisch</a></li><li><a href="#">sowie</a></li><li><a href="#">gefährliche</a></li><li><a href="#">veröffentlichung</a></li><li><a href="#">seit</a></li><li><a href="#">verbreitet</a></li><li><a href="#">lebensraum</a></li><li><a href="#">erinnert</a></li><li><a href="#">planeten</a></li><li><a href="#">essen</a></li><li><a href="#">herstellung</a></li><li><a href="#">ausführungen</a></li><li><a href="#">instrumente</a></li>
+<li><b><a href="#">polen</a></b></li><li><b><a href="#">gewährleisten</a></b></li><li><b><a href="#">beschrieben</a></b></li><li><b><a href="#">gesteckt</a></b></li><li><b><a href="#">wahlen</a></b></li><li><b><a href="#">glaubt</a></b></li><li><b><a href="#">verunsichert</a></b></li><li><b><a href="#">demokratisch</a></b></li><li><b><a href="#">sowie</a></b></li><li><b><a href="#">gefährliche</a></b></li><li><b><a href="#">veröffentlichung</a></b></li><li><b><a href="#">seit</a></b></li><li><b><a href="#">verbreitet</a></b></li><li><b><a href="#">lebensraum</a></b></li><li><b><a href="#">erinnert</a></b></li><li><b><a href="#">planeten</a></b></li><li><b><a href="#">essen</a></b></li><li><b><a href="#">herstellung</a></b></li><li><b><a href="#">ausführungen</a></b></li><li><b><a href="#">instrumente</a></b></li>
 
       </ul>
   </li>
@@ -220,7 +228,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList5" class="subset-links hidden">
 
-<li><a href="#">politischer</a></li><li><a href="#">wachsende</a></li><li><a href="#">produkten</a></li><li><a href="#">überzeugen</a></li><li><a href="#">minderheiten</a></li><li><a href="#">bedenken</a></li><li><a href="#">einiges</a></li><li><a href="#">patient</a></li><li><a href="#">konstruktion</a></li><li><a href="#">an</a></li><li><a href="#">viele</a></li><li><a href="#">gas</a></li><li><a href="#">alten</a></li><li><a href="#">flüchtlings</a></li><li><a href="#">nähe</a></li><li><a href="#">angepasst</a></li><li><a href="#">drin</a></li><li><a href="#">blauen</a></li><li><a href="#">modell</a></li><li><a href="#">fürchten</a></li>
+<li><b><a href="#">politischer</a></b></li><li><b><a href="#">wachsende</a></b></li><li><b><a href="#">produkten</a></b></li><li><b><a href="#">überzeugen</a></b></li><li><b><a href="#">minderheiten</a></b></li><li><b><a href="#">bedenken</a></b></li><li><b><a href="#">einiges</a></b></li><li><b><a href="#">patient</a></b></li><li><b><a href="#">konstruktion</a></b></li><li><b><a href="#">an</a></b></li><li><b><a href="#">viele</a></b></li><li><b><a href="#">gas</a></b></li><li><b><a href="#">alten</a></b></li><li><b><a href="#">flüchtlings</a></b></li><li><b><a href="#">nähe</a></b></li><li><b><a href="#">angepasst</a></b></li><li><b><a href="#">drin</a></b></li><li><b><a href="#">blauen</a></b></li><li><b><a href="#">modell</a></b></li><li><b><a href="#">fürchten</a></b></li>
 
       </ul>
   </li>
@@ -231,7 +239,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList6" class="subset-links hidden">
 
-<li><a href="#">korrekte</a></li><li><a href="#">detaillierte</a></li><li><a href="#">urkunden</a></li><li><a href="#">förderung</a></li><li><a href="#">vorstellungen</a></li><li><a href="#">echte</a></li><li><a href="#">ausschließen</a></li><li><a href="#">könig</a></li><li><a href="#">vierzehn</a></li><li><a href="#">freue</a></li><li><a href="#">gescheitert</a></li><li><a href="#">arbeitsplätze</a></li><li><a href="#">es</a></li><li><a href="#">mehrzahl</a></li><li><a href="#">respektiert</a></li><li><a href="#">historisch</a></li><li><a href="#">schweiz</a></li><li><a href="#">unabhängig</a></li><li><a href="#">eben</a></li><li><a href="#">optionen</a></li>
+<li><b><a href="#">korrekte</a></b></li><li><b><a href="#">detaillierte</a></b></li><li><b><a href="#">urkunden</a></b></li><li><b><a href="#">förderung</a></b></li><li><b><a href="#">vorstellungen</a></b></li><li><b><a href="#">echte</a></b></li><li><b><a href="#">ausschließen</a></b></li><li><b><a href="#">könig</a></b></li><li><b><a href="#">vierzehn</a></b></li><li><b><a href="#">freue</a></b></li><li><b><a href="#">gescheitert</a></b></li><li><b><a href="#">arbeitsplätze</a></b></li><li><b><a href="#">es</a></b></li><li><b><a href="#">mehrzahl</a></b></li><li><b><a href="#">respektiert</a></b></li><li><b><a href="#">historisch</a></b></li><li><b><a href="#">schweiz</a></b></li><li><b><a href="#">unabhängig</a></b></li><li><b><a href="#">eben</a></b></li><li><b><a href="#">optionen</a></b></li>
 
       </ul>
   </li>
@@ -242,7 +250,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList7" class="subset-links hidden">
 
-<li><a href="#">verstärkt</a></li><li><a href="#">kommissars</a></li><li><a href="#">unmittelbar</a></li><li><a href="#">festgestellt</a></li><li><a href="#">höhere</a></li><li><a href="#">vielen</a></li><li><a href="#">sensibel</a></li><li><a href="#">ein</a></li><li><a href="#">zwanzig</a></li><li><a href="#">keinerlei</a></li><li><a href="#">produkte</a></li><li><a href="#">aufhalten</a></li><li><a href="#">mängel</a></li><li><a href="#">europäischen</a></li><li><a href="#">gestartet</a></li><li><a href="#">pro</a></li><li><a href="#">text</a></li><li><a href="#">führer</a></li><li><a href="#">rechtlichen</a></li><li><a href="#">kenne</a></li>
+<li><b><a href="#">verstärkt</a></b></li><li><b><a href="#">kommissars</a></b></li><li><b><a href="#">unmittelbar</a></b></li><li><b><a href="#">festgestellt</a></b></li><li><b><a href="#">höhere</a></b></li><li><b><a href="#">vielen</a></b></li><li><b><a href="#">sensibel</a></b></li><li><b><a href="#">ein</a></b></li><li><b><a href="#">zwanzig</a></b></li><li><b><a href="#">keinerlei</a></b></li><li><b><a href="#">produkte</a></b></li><li><b><a href="#">aufhalten</a></b></li><li><b><a href="#">mängel</a></b></li><li><b><a href="#">europäischen</a></b></li><li><b><a href="#">gestartet</a></b></li><li><b><a href="#">pro</a></b></li><li><b><a href="#">text</a></b></li><li><b><a href="#">führer</a></b></li><li><b><a href="#">rechtlichen</a></b></li><li><b><a href="#">kenne</a></b></li>
 
       </ul>
   </li>
@@ -253,7 +261,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList8" class="subset-links hidden">
 
-<li><a href="#">konnte</a></li><li><a href="#">landen</a></li><li><a href="#">eigentlichen</a></li><li><a href="#">aufgegeben</a></li><li><a href="#">nehmen</a></li><li><a href="#">erwartungen</a></li><li><a href="#">keine</a></li><li><a href="#">einführen</a></li><li><a href="#">dieser</a></li><li><a href="#">entwickelt</a></li><li><a href="#">gute</a></li><li><a href="#">nachfrage</a></li><li><a href="#">bereits</a></li><li><a href="#">verschiedenen</a></li><li><a href="#">dorthin</a></li><li><a href="#">übernehmen</a></li><li><a href="#">überraschend</a></li><li><a href="#">halte</a></li><li><a href="#">arme</a></li><li><a href="#">vermisse</a></li>
+<li><b><a href="#">konnte</a></b></li><li><b><a href="#">landen</a></b></li><li><b><a href="#">eigentlichen</a></b></li><li><b><a href="#">aufgegeben</a></b></li><li><b><a href="#">nehmen</a></b></li><li><b><a href="#">erwartungen</a></b></li><li><b><a href="#">keine</a></b></li><li><b><a href="#">einführen</a></b></li><li><b><a href="#">dieser</a></b></li><li><b><a href="#">entwickelt</a></b></li><li><b><a href="#">gute</a></b></li><li><b><a href="#">nachfrage</a></b></li><li><b><a href="#">bereits</a></b></li><li><b><a href="#">verschiedenen</a></b></li><li><b><a href="#">dorthin</a></b></li><li><b><a href="#">übernehmen</a></b></li><li><b><a href="#">überraschend</a></b></li><li><b><a href="#">halte</a></b></li><li><b><a href="#">arme</a></b></li><li><b><a href="#">vermisse</a></b></li>
 
       </ul>
   </li>
@@ -264,7 +272,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList9" class="subset-links hidden">
 
-<li><a href="#">staatsbürgerschaft</a></li><li><a href="#">firmen</a></li><li><a href="#">hingewiesen</a></li><li><a href="#">dingen</a></li><li><a href="#">betreiben</a></li><li><a href="#">dadurch</a></li><li><a href="#">unabhängige</a></li><li><a href="#">außer</a></li><li><a href="#">genauso</a></li><li><a href="#">vertretung</a></li><li><a href="#">trinkwasser</a></li><li><a href="#">ausstellung</a></li><li><a href="#">konflikt</a></li><li><a href="#">enttäuschung</a></li><li><a href="#">gesetzlichen</a></li><li><a href="#">jahre</a></li><li><a href="#">knie</a></li><li><a href="#">drittel</a></li><li><a href="#">national</a></li><li><a href="#">verbrechen</a></li>
+<li><b><a href="#">staatsbürgerschaft</a></b></li><li><b><a href="#">firmen</a></b></li><li><b><a href="#">hingewiesen</a></b></li><li><b><a href="#">dingen</a></b></li><li><b><a href="#">betreiben</a></b></li><li><b><a href="#">dadurch</a></b></li><li><b><a href="#">unabhängige</a></b></li><li><b><a href="#">außer</a></b></li><li><b><a href="#">genauso</a></b></li><li><b><a href="#">vertretung</a></b></li><li><b><a href="#">trinkwasser</a></b></li><li><b><a href="#">ausstellung</a></b></li><li><b><a href="#">konflikt</a></b></li><li><b><a href="#">enttäuschung</a></b></li><li><b><a href="#">gesetzlichen</a></b></li><li><b><a href="#">jahre</a></b></li><li><b><a href="#">knie</a></b></li><li><b><a href="#">drittel</a></b></li><li><b><a href="#">national</a></b></li><li><b><a href="#">verbrechen</a></b></li>
 
       </ul>
   </li>
@@ -275,7 +283,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList10" class="subset-links hidden">
 
-<li><a href="#">junge</a></li><li><a href="#">eventuell</a></li><li><a href="#">niemand</a></li><li><a href="#">teilweise</a></li><li><a href="#">lokomotive</a></li><li><a href="#">beispiele</a></li><li><a href="#">fliegen</a></li><li><a href="#">eindeutig</a></li><li><a href="#">stößt</a></li><li><a href="#">minuten</a></li><li><a href="#">litauen</a></li><li><a href="#">kanada</a></li><li><a href="#">funktioniert</a></li><li><a href="#">königreich</a></li><li><a href="#">begrüßt</a></li><li><a href="#">fortgesetzt</a></li><li><a href="#">retten</a></li><li><a href="#">gesorgt</a></li><li><a href="#">einladung</a></li><li><a href="#">schwieriger</a></li>
+<li><b><a href="#">junge</a></b></li><li><b><a href="#">eventuell</a></b></li><li><b><a href="#">niemand</a></b></li><li><b><a href="#">teilweise</a></b></li><li><b><a href="#">lokomotive</a></b></li><li><b><a href="#">beispiele</a></b></li><li><b><a href="#">fliegen</a></b></li><li><b><a href="#">eindeutig</a></b></li><li><b><a href="#">stößt</a></b></li><li><b><a href="#">minuten</a></b></li><li><b><a href="#">litauen</a></b></li><li><b><a href="#">kanada</a></b></li><li><b><a href="#">funktioniert</a></b></li><li><b><a href="#">königreich</a></b></li><li><b><a href="#">begrüßt</a></b></li><li><b><a href="#">fortgesetzt</a></b></li><li><b><a href="#">retten</a></b></li><li><b><a href="#">gesorgt</a></b></li><li><b><a href="#">einladung</a></b></li><li><b><a href="#">schwieriger</a></b></li>
 
       </ul>
   </li>
@@ -286,7 +294,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList11" class="subset-links hidden">
 
-<li><a href="#">aufpassen</a></li><li><a href="#">eingehalten</a></li><li><a href="#">vierten</a></li><li><a href="#">niveau</a></li><li><a href="#">ganzen</a></li><li><a href="#">vier</a></li><li><a href="#">einverstanden</a></li><li><a href="#">betonen</a></li><li><a href="#">erteilen</a></li><li><a href="#">angriff</a></li><li><a href="#">hohes</a></li><li><a href="#">kritische</a></li><li><a href="#">tradition</a></li><li><a href="#">ähnlichen</a></li><li><a href="#">komplexes</a></li><li><a href="#">licht</a></li><li><a href="#">findet</a></li><li><a href="#">debatte</a></li><li><a href="#">diskutieren</a></li><li><a href="#">organisierte</a></li>
+<li><b><a href="#">aufpassen</a></b></li><li><b><a href="#">eingehalten</a></b></li><li><b><a href="#">vierten</a></b></li><li><b><a href="#">niveau</a></b></li><li><b><a href="#">ganzen</a></b></li><li><b><a href="#">vier</a></b></li><li><b><a href="#">einverstanden</a></b></li><li><b><a href="#">betonen</a></b></li><li><b><a href="#">erteilen</a></b></li><li><b><a href="#">angriff</a></b></li><li><b><a href="#">hohes</a></b></li><li><b><a href="#">kritische</a></b></li><li><b><a href="#">tradition</a></b></li><li><b><a href="#">ähnlichen</a></b></li><li><b><a href="#">komplexes</a></b></li><li><b><a href="#">licht</a></b></li><li><b><a href="#">findet</a></b></li><li><b><a href="#">debatte</a></b></li><li><b><a href="#">diskutieren</a></b></li><li><b><a href="#">organisierte</a></b></li>
 
       </ul>
   </li>
@@ -297,7 +305,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList12" class="subset-links hidden">
 
-<li><a href="#">standpunkt</a></li><li><a href="#">sonst</a></li><li><a href="#">ausbildung</a></li><li><a href="#">starken</a></li><li><a href="#">alltag</a></li><li><a href="#">realitäten</a></li><li><a href="#">gerne</a></li><li><a href="#">wäre</a></li><li><a href="#">zügig</a></li><li><a href="#">vorhanden</a></li><li><a href="#">kriterium</a></li><li><a href="#">ökologischen</a></li><li><a href="#">deutsches</a></li><li><a href="#">achtzig</a></li><li><a href="#">erbringen</a></li><li><a href="#">sollen</a></li><li><a href="#">flugzeug</a></li><li><a href="#">fühlen</a></li><li><a href="#">einladen</a></li><li><a href="#">vereinfacht</a></li>
+<li><b><a href="#">standpunkt</a></b></li><li><b><a href="#">sonst</a></b></li><li><b><a href="#">ausbildung</a></b></li><li><b><a href="#">starken</a></b></li><li><b><a href="#">alltag</a></b></li><li><b><a href="#">realitäten</a></b></li><li><b><a href="#">gerne</a></b></li><li><b><a href="#">wäre</a></b></li><li><b><a href="#">zügig</a></b></li><li><b><a href="#">vorhanden</a></b></li><li><b><a href="#">kriterium</a></b></li><li><b><a href="#">ökologischen</a></b></li><li><b><a href="#">deutsches</a></b></li><li><b><a href="#">achtzig</a></b></li><li><b><a href="#">erbringen</a></b></li><li><b><a href="#">sollen</a></b></li><li><b><a href="#">flugzeug</a></b></li><li><b><a href="#">fühlen</a></b></li><li><b><a href="#">einladen</a></b></li><li><b><a href="#">vereinfacht</a></b></li>
 
       </ul>
   </li>
@@ -308,7 +316,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList13" class="subset-links hidden">
 
-<li><a href="#">rückkehr</a></li><li><a href="#">schätze</a></li><li><a href="#">erfasst</a></li><li><a href="#">kommissarin</a></li><li><a href="#">verbesserung</a></li><li><a href="#">norden</a></li><li><a href="#">verknüpfung</a></li><li><a href="#">zurzeit</a></li><li><a href="#">fällen</a></li><li><a href="#">vorschlägen</a></li><li><a href="#">aufbauen</a></li><li><a href="#">finanziellen</a></li><li><a href="#">konflikte</a></li><li><a href="#">sagen</a></li><li><a href="#">entscheidung</a></li><li><a href="#">ausüben</a></li><li><a href="#">welt</a></li><li><a href="#">skandal</a></li><li><a href="#">umgesetzt</a></li><li><a href="#">verträge</a></li>
+<li><b><a href="#">rückkehr</a></b></li><li><b><a href="#">schätze</a></b></li><li><b><a href="#">erfasst</a></b></li><li><b><a href="#">kommissarin</a></b></li><li><b><a href="#">verbesserung</a></b></li><li><b><a href="#">norden</a></b></li><li><b><a href="#">verknüpfung</a></b></li><li><b><a href="#">zurzeit</a></b></li><li><b><a href="#">fällen</a></b></li><li><b><a href="#">vorschlägen</a></b></li><li><b><a href="#">aufbauen</a></b></li><li><b><a href="#">finanziellen</a></b></li><li><b><a href="#">konflikte</a></b></li><li><b><a href="#">sagen</a></b></li><li><b><a href="#">entscheidung</a></b></li><li><b><a href="#">ausüben</a></b></li><li><b><a href="#">welt</a></b></li><li><b><a href="#">skandal</a></b></li><li><b><a href="#">umgesetzt</a></b></li><li><b><a href="#">verträge</a></b></li>
 
       </ul>
   </li>
@@ -319,7 +327,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList14" class="subset-links hidden">
 
-<li><a href="#">augen</a></li><li><a href="#">sinn</a></li><li><a href="#">fünfzig</a></li><li><a href="#">rechten</a></li><li><a href="#">abend</a></li><li><a href="#">falschen</a></li><li><a href="#">asyl</a></li><li><a href="#">geht</a></li><li><a href="#">intensiver</a></li><li><a href="#">sichern</a></li><li><a href="#">april</a></li><li><a href="#">kurs</a></li><li><a href="#">dürfen</a></li><li><a href="#">weltweit</a></li><li><a href="#">herrn</a></li><li><a href="#">absurd</a></li><li><a href="#">solidarität</a></li><li><a href="#">weitere</a></li><li><a href="#">bleibt</a></li><li><a href="#">vorteil</a></li>
+<li><b><a href="#">augen</a></b></li><li><b><a href="#">sinn</a></b></li><li><b><a href="#">fünfzig</a></b></li><li><b><a href="#">rechten</a></b></li><li><b><a href="#">abend</a></b></li><li><b><a href="#">falschen</a></b></li><li><b><a href="#">asyl</a></b></li><li><b><a href="#">geht</a></b></li><li><b><a href="#">intensiver</a></b></li><li><b><a href="#">sichern</a></b></li><li><b><a href="#">april</a></b></li><li><b><a href="#">kurs</a></b></li><li><b><a href="#">dürfen</a></b></li><li><b><a href="#">weltweit</a></b></li><li><b><a href="#">herrn</a></b></li><li><b><a href="#">absurd</a></b></li><li><b><a href="#">solidarität</a></b></li><li><b><a href="#">weitere</a></b></li><li><b><a href="#">bleibt</a></b></li><li><b><a href="#">vorteil</a></b></li>
 
       </ul>
   </li>
@@ -330,7 +338,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList15" class="subset-links hidden">
 
-<li><a href="#">benennen</a></li><li><a href="#">land</a></li><li><a href="#">abgegeben</a></li><li><a href="#">monat</a></li><li><a href="#">öffentliche</a></li><li><a href="#">daten</a></li><li><a href="#">wahrheit</a></li><li><a href="#">auftrag</a></li><li><a href="#">davor</a></li><li><a href="#">chinesen</a></li><li><a href="#">artikel</a></li><li><a href="#">kultur</a></li><li><a href="#">aussetzen</a></li><li><a href="#">hingegen</a></li><li><a href="#">nennen</a></li><li><a href="#">wesentlicher</a></li><li><a href="#">erfolg</a></li><li><a href="#">flüchtlinge</a></li><li><a href="#">tatsächlich</a></li><li><a href="#">klarer</a></li>
+<li><b><a href="#">benennen</a></b></li><li><b><a href="#">land</a></b></li><li><b><a href="#">abgegeben</a></b></li><li><b><a href="#">monat</a></b></li><li><b><a href="#">öffentliche</a></b></li><li><b><a href="#">daten</a></b></li><li><b><a href="#">wahrheit</a></b></li><li><b><a href="#">auftrag</a></b></li><li><b><a href="#">davor</a></b></li><li><b><a href="#">chinesen</a></b></li><li><b><a href="#">artikel</a></b></li><li><b><a href="#">kultur</a></b></li><li><b><a href="#">aussetzen</a></b></li><li><b><a href="#">hingegen</a></b></li><li><b><a href="#">nennen</a></b></li><li><b><a href="#">wesentlicher</a></b></li><li><b><a href="#">erfolg</a></b></li><li><b><a href="#">flüchtlinge</a></b></li><li><b><a href="#">tatsächlich</a></b></li><li><b><a href="#">klarer</a></b></li>
 
       </ul>
   </li>
@@ -341,7 +349,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList16" class="subset-links hidden">
 
-<li><a href="#">verständigung</a></li><li><a href="#">liegt</a></li><li><a href="#">heraus</a></li><li><a href="#">parteien</a></li><li><a href="#">ernsthaft</a></li><li><a href="#">beschwerden</a></li><li><a href="#">hoffen</a></li><li><a href="#">stichwort</a></li><li><a href="#">gefällt</a></li><li><a href="#">zugang</a></li><li><a href="#">hintergrund</a></li><li><a href="#">schriftlich</a></li><li><a href="#">drohen</a></li><li><a href="#">dauert</a></li><li><a href="#">bewegung</a></li><li><a href="#">offenen</a></li><li><a href="#">kinder</a></li><li><a href="#">ordentlich</a></li><li><a href="#">wohnung</a></li><li><a href="#">anbieter</a></li>
+<li><b><a href="#">verständigung</a></b></li><li><b><a href="#">liegt</a></b></li><li><b><a href="#">heraus</a></b></li><li><b><a href="#">parteien</a></b></li><li><b><a href="#">ernsthaft</a></b></li><li><b><a href="#">beschwerden</a></b></li><li><b><a href="#">hoffen</a></b></li><li><b><a href="#">stichwort</a></b></li><li><b><a href="#">gefällt</a></b></li><li><b><a href="#">zugang</a></b></li><li><b><a href="#">hintergrund</a></b></li><li><b><a href="#">schriftlich</a></b></li><li><b><a href="#">drohen</a></b></li><li><b><a href="#">dauert</a></b></li><li><b><a href="#">bewegung</a></b></li><li><b><a href="#">offenen</a></b></li><li><b><a href="#">kinder</a></b></li><li><b><a href="#">ordentlich</a></b></li><li><b><a href="#">wohnung</a></b></li><li><b><a href="#">anbieter</a></b></li>
 
       </ul>
   </li>
@@ -352,7 +360,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList17" class="subset-links hidden">
 
-<li><a href="#">element</a></li><li><a href="#">deswegen</a></li><li><a href="#">früheren</a></li><li><a href="#">handeln</a></li><li><a href="#">gespräch</a></li><li><a href="#">kroatien</a></li><li><a href="#">unternehmen</a></li><li><a href="#">meinem</a></li><li><a href="#">nächste</a></li><li><a href="#">gleichgültig</a></li><li><a href="#">wenig</a></li><li><a href="#">volle</a></li><li><a href="#">rücken</a></li><li><a href="#">piloten</a></li><li><a href="#">ohne</a></li><li><a href="#">geringer</a></li><li><a href="#">äußerst</a></li><li><a href="#">vielzahl</a></li><li><a href="#">anderen</a></li><li><a href="#">strategie</a></li>
+<li><b><a href="#">element</a></b></li><li><b><a href="#">deswegen</a></b></li><li><b><a href="#">früheren</a></b></li><li><b><a href="#">handeln</a></b></li><li><b><a href="#">gespräch</a></b></li><li><b><a href="#">kroatien</a></b></li><li><b><a href="#">unternehmen</a></b></li><li><b><a href="#">meinem</a></b></li><li><b><a href="#">nächste</a></b></li><li><b><a href="#">gleichgültig</a></b></li><li><b><a href="#">wenig</a></b></li><li><b><a href="#">volle</a></b></li><li><b><a href="#">rücken</a></b></li><li><b><a href="#">piloten</a></b></li><li><b><a href="#">ohne</a></b></li><li><b><a href="#">geringer</a></b></li><li><b><a href="#">äußerst</a></b></li><li><b><a href="#">vielzahl</a></b></li><li><b><a href="#">anderen</a></b></li><li><b><a href="#">strategie</a></b></li>
 
       </ul>
   </li>
@@ -363,7 +371,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList18" class="subset-links hidden">
 
-<li><a href="#">bemerkung</a></li><li><a href="#">geführt</a></li><li><a href="#">prinzip</a></li><li><a href="#">gemerkt</a></li><li><a href="#">europäer</a></li><li><a href="#">gestärkt</a></li><li><a href="#">auffordern</a></li><li><a href="#">kommt</a></li><li><a href="#">erfolgt</a></li><li><a href="#">abgeordneten</a></li><li><a href="#">identität</a></li><li><a href="#">vorne</a></li><li><a href="#">siebzig</a></li><li><a href="#">wohlergehen</a></li><li><a href="#">beginnen</a></li><li><a href="#">importiert</a></li><li><a href="#">wissenschaftlichen</a></li><li><a href="#">regierung</a></li><li><a href="#">struktur</a></li><li><a href="#">besetzt</a></li>
+<li><b><a href="#">bemerkung</a></b></li><li><b><a href="#">geführt</a></b></li><li><b><a href="#">prinzip</a></b></li><li><b><a href="#">gemerkt</a></b></li><li><b><a href="#">europäer</a></b></li><li><b><a href="#">gestärkt</a></b></li><li><b><a href="#">auffordern</a></b></li><li><b><a href="#">kommt</a></b></li><li><b><a href="#">erfolgt</a></b></li><li><b><a href="#">abgeordneten</a></b></li><li><b><a href="#">identität</a></b></li><li><b><a href="#">vorne</a></b></li><li><b><a href="#">siebzig</a></b></li><li><b><a href="#">wohlergehen</a></b></li><li><b><a href="#">beginnen</a></b></li><li><b><a href="#">importiert</a></b></li><li><b><a href="#">wissenschaftlichen</a></b></li><li><b><a href="#">regierung</a></b></li><li><b><a href="#">struktur</a></b></li><li><b><a href="#">besetzt</a></b></li>
 
       </ul>
   </li>
@@ -374,7 +382,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList19" class="subset-links hidden">
 
-<li><a href="#">können</a></li><li><a href="#">solche</a></li><li><a href="#">flut</a></li><li><a href="#">leiden</a></li><li><a href="#">nachhaltiger</a></li><li><a href="#">aktivitäten</a></li><li><a href="#">gegründet</a></li><li><a href="#">frei</a></li><li><a href="#">deutschland</a></li><li><a href="#">konservativ</a></li><li><a href="#">umgehen</a></li><li><a href="#">arbeiten</a></li><li><a href="#">produziert</a></li><li><a href="#">ehrlich</a></li><li><a href="#">zusagen</a></li><li><a href="#">zusammenarbeiten</a></li><li><a href="#">meer</a></li><li><a href="#">verlangen</a></li><li><a href="#">vergessen</a></li><li><a href="#">koalition</a></li>
+<li><b><a href="#">können</a></b></li><li><b><a href="#">solche</a></b></li><li><b><a href="#">flut</a></b></li><li><b><a href="#">leiden</a></b></li><li><b><a href="#">nachhaltiger</a></b></li><li><b><a href="#">aktivitäten</a></b></li><li><b><a href="#">gegründet</a></b></li><li><b><a href="#">frei</a></b></li><li><b><a href="#">deutschland</a></b></li><li><b><a href="#">konservativ</a></b></li><li><b><a href="#">umgehen</a></b></li><li><b><a href="#">arbeiten</a></b></li><li><b><a href="#">produziert</a></b></li><li><b><a href="#">ehrlich</a></b></li><li><b><a href="#">zusagen</a></b></li><li><b><a href="#">zusammenarbeiten</a></b></li><li><b><a href="#">meer</a></b></li><li><b><a href="#">verlangen</a></b></li><li><b><a href="#">vergessen</a></b></li><li><b><a href="#">koalition</a></b></li>
 
       </ul>
   </li>
@@ -385,7 +393,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList20" class="subset-links hidden">
 
-<li><a href="#">blockieren</a></li><li><a href="#">erfolgreich</a></li><li><a href="#">behandlung</a></li><li><a href="#">gezeigt</a></li><li><a href="#">donnerstag</a></li><li><a href="#">gerichtet</a></li><li><a href="#">verteilung</a></li><li><a href="#">verhandelt</a></li><li><a href="#">mandate</a></li><li><a href="#">reichtum</a></li><li><a href="#">konzept</a></li><li><a href="#">aufnehmen</a></li><li><a href="#">insgesamt</a></li><li><a href="#">mittels</a></li><li><a href="#">letztes</a></li><li><a href="#">statistik</a></li><li><a href="#">zweiundzwanzig</a></li><li><a href="#">zukünftigen</a></li><li><a href="#">schnell</a></li><li><a href="#">identifiziert</a></li>
+<li><b><a href="#">blockieren</a></b></li><li><b><a href="#">erfolgreich</a></b></li><li><b><a href="#">behandlung</a></b></li><li><b><a href="#">gezeigt</a></b></li><li><b><a href="#">donnerstag</a></b></li><li><b><a href="#">gerichtet</a></b></li><li><b><a href="#">verteilung</a></b></li><li><b><a href="#">verhandelt</a></b></li><li><b><a href="#">mandate</a></b></li><li><b><a href="#">reichtum</a></b></li><li><b><a href="#">konzept</a></b></li><li><b><a href="#">aufnehmen</a></b></li><li><b><a href="#">insgesamt</a></b></li><li><b><a href="#">mittels</a></b></li><li><b><a href="#">letztes</a></b></li><li><b><a href="#">statistik</a></b></li><li><b><a href="#">zweiundzwanzig</a></b></li><li><b><a href="#">zukünftigen</a></b></li><li><b><a href="#">schnell</a></b></li><li><b><a href="#">identifiziert</a></b></li>
 
       </ul>
   </li>
@@ -396,7 +404,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList21" class="subset-links hidden">
 
-<li><a href="#">überprüfung</a></li><li><a href="#">erfolge</a></li><li><a href="#">glück</a></li><li><a href="#">verbesserte</a></li><li><a href="#">seinem</a></li><li><a href="#">besonderen</a></li><li><a href="#">verwirklichung</a></li><li><a href="#">zustand</a></li><li><a href="#">zwei</a></li><li><a href="#">einführung</a></li><li><a href="#">bereitschaft</a></li><li><a href="#">vereinigte</a></li><li><a href="#">wochenende</a></li><li><a href="#">ganz</a></li><li><a href="#">verfahren</a></li><li><a href="#">prioritäten</a></li><li><a href="#">privaten</a></li><li><a href="#">ging</a></li><li><a href="#">genügend</a></li><li><a href="#">stärkt</a></li>
+<li><b><a href="#">überprüfung</a></b></li><li><b><a href="#">erfolge</a></b></li><li><b><a href="#">glück</a></b></li><li><b><a href="#">verbesserte</a></b></li><li><b><a href="#">seinem</a></b></li><li><b><a href="#">besonderen</a></b></li><li><b><a href="#">verwirklichung</a></b></li><li><b><a href="#">zustand</a></b></li><li><b><a href="#">zwei</a></b></li><li><b><a href="#">einführung</a></b></li><li><b><a href="#">bereitschaft</a></b></li><li><b><a href="#">vereinigte</a></b></li><li><b><a href="#">wochenende</a></b></li><li><b><a href="#">ganz</a></b></li><li><b><a href="#">verfahren</a></b></li><li><b><a href="#">prioritäten</a></b></li><li><b><a href="#">privaten</a></b></li><li><b><a href="#">ging</a></b></li><li><b><a href="#">genügend</a></b></li><li><b><a href="#">stärkt</a></b></li>
 
       </ul>
   </li>
@@ -407,7 +415,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList22" class="subset-links hidden">
 
-<li><a href="#">dessen</a></li><li><a href="#">kirchen</a></li><li><a href="#">durchgesetzt</a></li><li><a href="#">pflegen</a></li><li><a href="#">bietet</a></li><li><a href="#">schweren</a></li><li><a href="#">wirkung</a></li><li><a href="#">passiert</a></li><li><a href="#">reduzieren</a></li><li><a href="#">zweite</a></li><li><a href="#">wünschen</a></li><li><a href="#">berücksichtigen</a></li><li><a href="#">kindern</a></li><li><a href="#">beschäftigt</a></li><li><a href="#">verkehr</a></li><li><a href="#">ergebnis</a></li><li><a href="#">wirtschaftlichen</a></li><li><a href="#">streit</a></li><li><a href="#">sieg</a></li><li><a href="#">millionen</a></li>
+<li><b><a href="#">dessen</a></b></li><li><b><a href="#">kirchen</a></b></li><li><b><a href="#">durchgesetzt</a></b></li><li><b><a href="#">pflegen</a></b></li><li><b><a href="#">bietet</a></b></li><li><b><a href="#">schweren</a></b></li><li><b><a href="#">wirkung</a></b></li><li><b><a href="#">passiert</a></b></li><li><b><a href="#">reduzieren</a></b></li><li><b><a href="#">zweite</a></b></li><li><b><a href="#">wünschen</a></b></li><li><b><a href="#">berücksichtigen</a></b></li><li><b><a href="#">kindern</a></b></li><li><b><a href="#">beschäftigt</a></b></li><li><b><a href="#">verkehr</a></b></li><li><b><a href="#">ergebnis</a></b></li><li><b><a href="#">wirtschaftlichen</a></b></li><li><b><a href="#">streit</a></b></li><li><b><a href="#">sieg</a></b></li><li><b><a href="#">millionen</a></b></li>
 
       </ul>
   </li>
@@ -418,7 +426,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList23" class="subset-links hidden">
 
-<li><a href="#">deutschen</a></li><li><a href="#">beschäftigen</a></li><li><a href="#">kämpfen</a></li><li><a href="#">integrierte</a></li><li><a href="#">ansprüche</a></li><li><a href="#">global</a></li><li><a href="#">haus</a></li><li><a href="#">auftreten</a></li><li><a href="#">einer</a></li><li><a href="#">entwickeln</a></li><li><a href="#">größer</a></li><li><a href="#">entschuldigung</a></li><li><a href="#">umweltschutz</a></li><li><a href="#">jährlichen</a></li><li><a href="#">ihrem</a></li><li><a href="#">vollkommen</a></li><li><a href="#">gewollt</a></li><li><a href="#">alles</a></li><li><a href="#">getrieben</a></li><li><a href="#">bereichen</a></li>
+<li><b><a href="#">deutschen</a></b></li><li><b><a href="#">beschäftigen</a></b></li><li><b><a href="#">kämpfen</a></b></li><li><b><a href="#">integrierte</a></b></li><li><b><a href="#">ansprüche</a></b></li><li><b><a href="#">global</a></b></li><li><b><a href="#">haus</a></b></li><li><b><a href="#">auftreten</a></b></li><li><b><a href="#">einer</a></b></li><li><b><a href="#">entwickeln</a></b></li><li><b><a href="#">größer</a></b></li><li><b><a href="#">entschuldigung</a></b></li><li><b><a href="#">umweltschutz</a></b></li><li><b><a href="#">jährlichen</a></b></li><li><b><a href="#">ihrem</a></b></li><li><b><a href="#">vollkommen</a></b></li><li><b><a href="#">gewollt</a></b></li><li><b><a href="#">alles</a></b></li><li><b><a href="#">getrieben</a></b></li><li><b><a href="#">bereichen</a></b></li>
 
       </ul>
   </li>
@@ -429,7 +437,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList24" class="subset-links hidden">
 
-<li><a href="#">seine</a></li><li><a href="#">unbedingt</a></li><li><a href="#">banken</a></li><li><a href="#">letzte</a></li><li><a href="#">richter</a></li><li><a href="#">klimaschutz</a></li><li><a href="#">gesellschaftliche</a></li><li><a href="#">dank</a></li><li><a href="#">weg</a></li><li><a href="#">märz</a></li><li><a href="#">wirken</a></li><li><a href="#">für</a></li><li><a href="#">weiß</a></li><li><a href="#">organisieren</a></li><li><a href="#">überprüft</a></li><li><a href="#">digitale</a></li><li><a href="#">informiert</a></li><li><a href="#">technologie</a></li><li><a href="#">gefährlich</a></li><li><a href="#">australien</a></li>
+<li><b><a href="#">seine</a></b></li><li><b><a href="#">unbedingt</a></b></li><li><b><a href="#">banken</a></b></li><li><b><a href="#">letzte</a></b></li><li><b><a href="#">richter</a></b></li><li><b><a href="#">klimaschutz</a></b></li><li><b><a href="#">gesellschaftliche</a></b></li><li><b><a href="#">dank</a></b></li><li><b><a href="#">weg</a></b></li><li><b><a href="#">märz</a></b></li><li><b><a href="#">wirken</a></b></li><li><b><a href="#">für</a></b></li><li><b><a href="#">weiß</a></b></li><li><b><a href="#">organisieren</a></b></li><li><b><a href="#">überprüft</a></b></li><li><b><a href="#">digitale</a></b></li><li><b><a href="#">informiert</a></b></li><li><b><a href="#">technologie</a></b></li><li><b><a href="#">gefährlich</a></b></li><li><b><a href="#">australien</a></b></li>
 
       </ul>
   </li>
@@ -440,7 +448,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList25" class="subset-links hidden">
 
-<li><a href="#">relevante</a></li><li><a href="#">jeden</a></li><li><a href="#">illegal</a></li><li><a href="#">entgegen</a></li><li><a href="#">aussprechen</a></li><li><a href="#">hinter</a></li><li><a href="#">behandelt</a></li><li><a href="#">recht</a></li><li><a href="#">produktion</a></li><li><a href="#">beides</a></li><li><a href="#">darunter</a></li><li><a href="#">unter</a></li><li><a href="#">eingeführt</a></li><li><a href="#">kleinen</a></li><li><a href="#">bitte</a></li><li><a href="#">frankreich</a></li><li><a href="#">sein</a></li><li><a href="#">jahres</a></li><li><a href="#">veränderte</a></li><li><a href="#">einige</a></li>
+<li><b><a href="#">relevante</a></b></li><li><b><a href="#">jeden</a></b></li><li><b><a href="#">illegal</a></b></li><li><b><a href="#">entgegen</a></b></li><li><b><a href="#">aussprechen</a></b></li><li><b><a href="#">hinter</a></b></li><li><b><a href="#">behandelt</a></b></li><li><b><a href="#">recht</a></b></li><li><b><a href="#">produktion</a></b></li><li><b><a href="#">beides</a></b></li><li><b><a href="#">darunter</a></b></li><li><b><a href="#">unter</a></b></li><li><b><a href="#">eingeführt</a></b></li><li><b><a href="#">kleinen</a></b></li><li><b><a href="#">bitte</a></b></li><li><b><a href="#">frankreich</a></b></li><li><b><a href="#">sein</a></b></li><li><b><a href="#">jahres</a></b></li><li><b><a href="#">veränderte</a></b></li><li><b><a href="#">einige</a></b></li>
 
       </ul>
   </li>
@@ -451,7 +459,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList26" class="subset-links hidden">
 
-<li><a href="#">osten</a></li><li><a href="#">linie</a></li><li><a href="#">präsidenten</a></li><li><a href="#">beantragen</a></li><li><a href="#">ausgestellt</a></li><li><a href="#">wirksamkeit</a></li><li><a href="#">verlaufen</a></li><li><a href="#">jenseits</a></li><li><a href="#">immer</a></li><li><a href="#">programm</a></li><li><a href="#">mitgewirkt</a></li><li><a href="#">anteil</a></li><li><a href="#">hören</a></li><li><a href="#">afrika</a></li><li><a href="#">parlaments</a></li><li><a href="#">macht</a></li><li><a href="#">scheinbar</a></li><li><a href="#">staatsanwalt</a></li><li><a href="#">britische</a></li><li><a href="#">fähigkeit</a></li>
+<li><b><a href="#">osten</a></b></li><li><b><a href="#">linie</a></b></li><li><b><a href="#">präsidenten</a></b></li><li><b><a href="#">beantragen</a></b></li><li><b><a href="#">ausgestellt</a></b></li><li><b><a href="#">wirksamkeit</a></b></li><li><b><a href="#">verlaufen</a></b></li><li><b><a href="#">jenseits</a></b></li><li><b><a href="#">immer</a></b></li><li><b><a href="#">programm</a></b></li><li><b><a href="#">mitgewirkt</a></b></li><li><b><a href="#">anteil</a></b></li><li><b><a href="#">hören</a></b></li><li><b><a href="#">afrika</a></b></li><li><b><a href="#">parlaments</a></b></li><li><b><a href="#">macht</a></b></li><li><b><a href="#">scheinbar</a></b></li><li><b><a href="#">staatsanwalt</a></b></li><li><b><a href="#">britische</a></b></li><li><b><a href="#">fähigkeit</a></b></li>
 
       </ul>
   </li>
@@ -462,7 +470,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList27" class="subset-links hidden">
 
-<li><a href="#">prinzipien</a></li><li><a href="#">folgen</a></li><li><a href="#">dass</a></li><li><a href="#">worden</a></li><li><a href="#">verletzung</a></li><li><a href="#">job</a></li><li><a href="#">untersuchungen</a></li><li><a href="#">anmerken</a></li><li><a href="#">vor</a></li><li><a href="#">informationen</a></li><li><a href="#">technologien</a></li><li><a href="#">investitionen</a></li><li><a href="#">gegensatz</a></li><li><a href="#">setze</a></li><li><a href="#">staatliche</a></li><li><a href="#">beraten</a></li><li><a href="#">wirtschaftlich</a></li><li><a href="#">übrigens</a></li><li><a href="#">bitten</a></li><li><a href="#">belastung</a></li>
+<li><b><a href="#">prinzipien</a></b></li><li><b><a href="#">folgen</a></b></li><li><b><a href="#">dass</a></b></li><li><b><a href="#">worden</a></b></li><li><b><a href="#">verletzung</a></b></li><li><b><a href="#">job</a></b></li><li><b><a href="#">untersuchungen</a></b></li><li><b><a href="#">anmerken</a></b></li><li><b><a href="#">vor</a></b></li><li><b><a href="#">informationen</a></b></li><li><b><a href="#">technologien</a></b></li><li><b><a href="#">investitionen</a></b></li><li><b><a href="#">gegensatz</a></b></li><li><b><a href="#">setze</a></b></li><li><b><a href="#">staatliche</a></b></li><li><b><a href="#">beraten</a></b></li><li><b><a href="#">wirtschaftlich</a></b></li><li><b><a href="#">übrigens</a></b></li><li><b><a href="#">bitten</a></b></li><li><b><a href="#">belastung</a></b></li>
 
       </ul>
   </li>
@@ -473,7 +481,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList28" class="subset-links hidden">
 
-<li><a href="#">intensive</a></li><li><a href="#">effizient</a></li><li><a href="#">überlassen</a></li><li><a href="#">privatsphäre</a></li><li><a href="#">am</a></li><li><a href="#">kulturellen</a></li><li><a href="#">aufrechterhalten</a></li><li><a href="#">liegen</a></li><li><a href="#">bestehen</a></li><li><a href="#">akzeptieren</a></li><li><a href="#">jemanden</a></li><li><a href="#">austausch</a></li><li><a href="#">finanzen</a></li><li><a href="#">tagen</a></li><li><a href="#">geschickt</a></li><li><a href="#">erweisen</a></li><li><a href="#">zeiten</a></li><li><a href="#">landwirtschaft</a></li><li><a href="#">verstärken</a></li><li><a href="#">festgehalten</a></li>
+<li><b><a href="#">intensive</a></b></li><li><b><a href="#">effizient</a></b></li><li><b><a href="#">überlassen</a></b></li><li><b><a href="#">privatsphäre</a></b></li><li><b><a href="#">am</a></b></li><li><b><a href="#">kulturellen</a></b></li><li><b><a href="#">aufrechterhalten</a></b></li><li><b><a href="#">liegen</a></b></li><li><b><a href="#">bestehen</a></b></li><li><b><a href="#">akzeptieren</a></b></li><li><b><a href="#">jemanden</a></b></li><li><b><a href="#">austausch</a></b></li><li><b><a href="#">finanzen</a></b></li><li><b><a href="#">tagen</a></b></li><li><b><a href="#">geschickt</a></b></li><li><b><a href="#">erweisen</a></b></li><li><b><a href="#">zeiten</a></b></li><li><b><a href="#">landwirtschaft</a></b></li><li><b><a href="#">verstärken</a></b></li><li><b><a href="#">festgehalten</a></b></li>
 
       </ul>
   </li>
@@ -484,7 +492,7 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList29" class="subset-links hidden">
 
-<li><a href="#">belastungen</a></li><li><a href="#">arbeit</a></li><li><a href="#">bekannt</a></li><li><a href="#">brief</a></li><li><a href="#">kriegen</a></li><li><a href="#">fand</a></li><li><a href="#">ebenso</a></li><li><a href="#">hinterlassen</a></li><li><a href="#">stunde</a></li><li><a href="#">staat</a></li><li><a href="#">umweltpolitik</a></li><li><a href="#">gekauft</a></li><li><a href="#">ziehen</a></li><li><a href="#">effektiv</a></li><li><a href="#">zwingen</a></li><li><a href="#">darüber</a></li><li><a href="#">vorher</a></li><li><a href="#">aufhören</a></li><li><a href="#">datenschutz</a></li><li><a href="#">lösen</a></li>
+<li><b><a href="#">belastungen</a></b></li><li><b><a href="#">arbeit</a></b></li><li><b><a href="#">bekannt</a></b></li><li><b><a href="#">brief</a></b></li><li><b><a href="#">kriegen</a></b></li><li><b><a href="#">fand</a></b></li><li><b><a href="#">ebenso</a></b></li><li><b><a href="#">hinterlassen</a></b></li><li><b><a href="#">stunde</a></b></li><li><b><a href="#">staat</a></b></li><li><b><a href="#">umweltpolitik</a></b></li><li><b><a href="#">gekauft</a></b></li><li><b><a href="#">ziehen</a></b></li><li><b><a href="#">effektiv</a></b></li><li><b><a href="#">zwingen</a></b></li><li><b><a href="#">darüber</a></b></li><li><b><a href="#">vorher</a></b></li><li><b><a href="#">aufhören</a></b></li><li><b><a href="#">datenschutz</a></b></li><li><b><a href="#">lösen</a></b></li>
 
       </ul>
   </li>
@@ -495,19 +503,18 @@
       <!-- Subset links (hidden by default) -->
       <ul id="subsetList30" class="subset-links hidden">
 
-<li><a href="#">schadet</a></li><li><a href="#">angeboten</a></li><li><a href="#">ausland</a></li><li><a href="#">perspektive</a></li><li><a href="#">hände</a></li><li><a href="#">zum</a></li><li><a href="#">entnehmen</a></li><li><a href="#">gegenseitig</a></li><li><a href="#">private</a></li><li><a href="#">berücksichtigt</a></li><li><a href="#">vorschlagen</a></li><li><a href="#">betreiber</a></li><li><a href="#">themen</a></li><li><a href="#">verfügung</a></li><li><a href="#">meinung</a></li><li><a href="#">gerecht</a></li><li><a href="#">zuständig</a></li><li><a href="#">mitglied</a></li><li><a href="#">auswirken</a></li><li><a href="#">fast</a></li>
+<li><b><a href="#">schadet</a></b></li><li><b><a href="#">angeboten</a></b></li><li><b><a href="#">ausland</a></b></li><li><b><a href="#">perspektive</a></b></li><li><b><a href="#">hände</a></b></li><li><b><a href="#">zum</a></b></li><li><b><a href="#">entnehmen</a></b></li><li><b><a href="#">gegenseitig</a></b></li><li><b><a href="#">private</a></b></li><li><b><a href="#">berücksichtigt</a></b></li><li><b><a href="#">vorschlagen</a></b></li><li><b><a href="#">betreiber</a></b></li><li><b><a href="#">themen</a></b></li><li><b><a href="#">verfügung</a></b></li><li><b><a href="#">meinung</a></b></li><li><b><a href="#">gerecht</a></b></li><li><b><a href="#">zuständig</a></b></li><li><b><a href="#">mitglied</a></b></li><li><b><a href="#">auswirken</a></b></li><li><b><a href="#">fast</a></b></li>
 
       </ul>
   </li>
 
 </ul>
 
-
         </aside>
 
         <section class="main">
-            <h2>Contact us to buy 235 complete lessons. Telegram : @de_story </h2>
-            <!-- <p>Click on a link to display the video and related subset links.</p> -->
+            <h2>Main Content</h2>
+            <div id="videoTitle" class="video-title"></div>
 
             <!-- Video container (hidden by default) -->
             <video id="videoPlayer" class="hidden" controls>
@@ -518,10 +525,12 @@
     </div>
 
     <footer>
-        <p>Telegram : @de_story</p>
+        <p>Footer Content</p>
     </footer>
 
     <script>
+        let activeLink = null;
+
         function showVideo(event, videoSrc) {
             // Hide all subset lists first
             const allSubsetLists = document.querySelectorAll('.subset-links');
@@ -532,11 +541,22 @@
             const subsetList = link.nextElementSibling;
             subsetList.classList.remove('hidden'); // Show the correct subset list
 
+            // Update the video title above the player
+            const videoTitle = document.getElementById('videoTitle');
+            videoTitle.innerText = link.textContent; // Set the clicked link's text as title
+
             // Show the video and update the video source
             const videoPlayer = document.getElementById('videoPlayer');
             videoPlayer.classList.remove('hidden');
             videoPlayer.querySelector('source').src = videoSrc;
             videoPlayer.load(); // Reload video with the new source
+
+            // Handle active link styling
+            if (activeLink) {
+                activeLink.classList.remove('active'); // Remove active class from the previous link
+            }
+            link.classList.add('active'); // Add active class to the current link
+            activeLink = link; // Set the current link as active
         }
     </script>
 
